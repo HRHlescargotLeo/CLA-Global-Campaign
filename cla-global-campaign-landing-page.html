@@ -7,49 +7,48 @@
 <meta name="description" content="CLA Global is a professional services network designed to help realize the ambitions of privately owned, fast-growing, mid-market clients with cross-border needs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    CLA GLOBAL — LINKEDIN CAMPAIGN LANDING PAGE
-   Proof of concept template. ClerksWell, July 2026.
+   ClerksWell, July 2026
 
-   Colour + type tokens taken directly from
-   CLA Global Brand Guidelines v2.0.
-   Museo Sans is a licensed face and is not web-embedded here;
-   Figtree is used as a close geometric stand-in for the POC.
+   Built to the CLA Website Guidelines (Jan 2024) and to the
+   supplied component screenshots. Existing components are
+   reproduced as designed, not reinterpreted.
+
+   Museo Sans is licensed and not web-embedded here; Nunito Sans
+   stands in for the POC. Georgia is a system font, used as specified.
    ============================================================ */
 
 :root{
-  /* Primary palette */
   --navy:#2E334E;
-  --navy-80:#585C71;
-  --navy-60:#828595;
-  --navy-40:#ABADB8;
-  --navy-20:#D5D6DC;
-  --riptide:#7DD2D3;
-  --riptide-s1:#39A5A7;
-  --riptide-s2:#24787A;
-  --riptide-20:#E5F6F6;
-  --riptide-40:#CBEDED;
   --charcoal:#25282A;
-  --smoke:#ABAEAB;
-  --cloud:#EEF2F2;
   --white:#FFFFFF;
+  --grey-bg:#F7F7F7;          /* section background, measured from screenshots */
+  --riptide:#7DD2D3;
+  --riptide-dark:#24787A;     /* "Dark Riptide" */
+  --riptide-20:#E5F6F6;       /* CTA panel background */
+  --smoke:#ABAEAB;
+  --rule-grey:#DEDEDE;
+  --disclaimer:#A8A9AA;
+  --charcoal-30:#66696A;
 
-  /* Secondary palette — used only in Connected Points pairs */
-  --flax:#FFD488;
-  --tan:#E8C79E;
+  /* Secondary palette — one per benefit rule, in the order measured */
   --ultramarine:#4F77CE;
+  --vermilion:#BC7783;
+  --olive:#82AC5F;
+  --mustard:#F1BE4B;
 
-  /* Type */
-  --sans:"Figtree","Nunito Sans","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  --logo-white:url("data:image/png;base64,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");
+  --logo-navy:url("data:image/png;base64,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");
+
+  --sans:"Nunito Sans","Museo Sans","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
   --serif:Georgia,"Times New Roman",serif;
 
-  /* Rhythm */
-  --gut:clamp(20px,4vw,40px);
-  --maxw:1240px;
-  --sect:clamp(64px,8vw,116px);
-  --r:2px;
+  --maxw:1188px;              /* measured from the Stats component */
+  --gut:clamp(20px,5vw,40px);
+  --sect:clamp(56px,7vw,90px);
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -59,568 +58,315 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
   margin:0;
   font-family:var(--sans);
-  font-weight:400;
-  font-size:17px;
-  line-height:1.65;
-  color:var(--navy);
+  font-weight:300;
+  font-size:18px;
+  line-height:1.72;
+  color:var(--charcoal);
   background:var(--white);
   -webkit-font-smoothing:antialiased;
 }
-
 img{max-width:100%;display:block}
-a{color:inherit}
 
 .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut)}
 
-/* Skip link */
-.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--riptide);color:var(--navy);
-  padding:14px 22px;font-weight:700;text-decoration:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--white);color:var(--navy);
+  padding:14px 22px;font-weight:600;text-decoration:none}
 .skip:focus{left:12px;top:12px}
 
-/* Visible focus everywhere */
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
-textarea:focus-visible,[tabindex]:focus-visible{
-  outline:3px solid var(--riptide);
-  outline-offset:3px;
-}
-.on-light a:focus-visible,.on-light button:focus-visible{outline-color:var(--riptide-s2)}
+textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--riptide-dark);outline-offset:2px}
+.on-navy a:focus-visible,.on-navy button:focus-visible{outline-color:var(--riptide)}
 
-/* ---------- Type scale ---------- */
-.eyebrow{
-  font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  margin:0 0 20px;display:flex;align-items:center;gap:12px;
-}
-.eyebrow::before{content:"";width:26px;height:2px;background:currentColor;flex:none}
-.h1{font-size:clamp(40px,6.2vw,74px);line-height:1.02;font-weight:800;letter-spacing:-.028em;margin:0}
-.h2{font-size:clamp(30px,3.8vw,46px);line-height:1.1;font-weight:800;letter-spacing:-.022em;margin:0}
-.h3{font-size:clamp(20px,2vw,23px);line-height:1.25;font-weight:700;letter-spacing:-.012em;margin:0}
-.lede{font-size:clamp(18px,1.55vw,21px);line-height:1.6;font-weight:400;margin:0}
-.muted{color:var(--navy-80)}
+/* ------------------------------------------------------------
+   TYPE — Website Guidelines p.8
+   ------------------------------------------------------------ */
+.h1{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5.2vw,57px);line-height:1.12;
+  color:var(--white);margin:0;letter-spacing:-.005em}
+.h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.4vw,36px);line-height:1.24;
+  color:var(--navy);margin:0}
+.h3{font-family:var(--sans);font-weight:400;font-size:clamp(24px,2.6vw,30px);line-height:1.3;
+  color:var(--navy);margin:0}
+.h5{font-family:var(--sans);font-weight:600;font-size:20px;line-height:1.3;color:var(--navy);margin:0}
+.desc{font-family:var(--sans);font-weight:300;font-size:clamp(19px,2vw,24px);line-height:1.55;margin:0}
+.body-copy{font-size:18px;font-weight:300;line-height:1.72;color:var(--charcoal);margin:0}
+.on-navy .h2,.on-navy .h3{color:var(--white)}
+.on-navy .body-copy,.on-navy .desc{color:var(--white)}
 
-/* ---------- Buttons ---------- */
-.btn{
-  display:inline-flex;align-items:center;gap:11px;
-  font-family:var(--sans);font-size:16px;font-weight:700;line-height:1;
-  padding:17px 28px;border:2px solid transparent;border-radius:var(--r);
-  text-decoration:none;cursor:pointer;
-  transition:background .18s ease,color .18s ease,border-color .18s ease,transform .18s ease;
-}
-.btn .arw{transition:transform .18s ease}
-.btn:hover .arw{transform:translateX(4px)}
-@media (prefers-reduced-motion:reduce){.btn,.btn .arw{transition:none}}
-
-.btn-primary{background:var(--riptide);color:var(--navy);border-color:var(--riptide)}
-.btn-primary:hover{background:var(--white);border-color:var(--white)}
-
-.btn-navy{background:var(--navy);color:var(--white);border-color:var(--navy)}
-.btn-navy:hover{background:var(--riptide-s2);border-color:var(--riptide-s2)}
-
-.btn-ghost-light{background:transparent;color:var(--white);border-color:rgba(255,255,255,.55)}
-.btn-ghost-light:hover{background:var(--white);color:var(--navy);border-color:var(--white)}
-
-.btn-ghost-dark{background:transparent;color:var(--navy);border-color:var(--navy-40)}
-.btn-ghost-dark:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
-
-.textlink{
-  display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:16px;
-  color:var(--riptide-s2);text-decoration:none;
-  border-bottom:2px solid var(--riptide);padding-bottom:3px;
-  transition:color .18s ease,border-color .18s ease;
-}
-.textlink:hover{color:var(--navy);border-color:var(--navy)}
-.textlink .arw{transition:transform .18s ease}
-.textlink:hover .arw{transform:translateX(4px)}
-
-/* ============================================================
-   HEADER — campaign variant
-   Deliberately distinct from the main site: transparent over the
-   hero, condensing to solid navy on scroll, reduced nav set.
-   ============================================================ */
-.hdr{
-  position:fixed;inset:0 0 auto 0;z-index:100;
-  background:transparent;
-  border-bottom:1px solid rgba(255,255,255,.14);
-  transition:background .3s ease,border-color .3s ease,box-shadow .3s ease;
-}
-.hdr.is-stuck{background:var(--navy);border-bottom-color:rgba(255,255,255,.1);
-  box-shadow:0 12px 34px rgba(46,51,78,.24)}
-.hdr-in{display:flex;align-items:center;gap:28px;height:82px;transition:height .3s ease}
-.hdr.is-stuck .hdr-in{height:68px}
-@media (prefers-reduced-motion:reduce){.hdr,.hdr-in{transition:none}}
-
-.hdr-logo{display:flex;align-items:center;text-decoration:none;flex:none}
-.hdr-logo img{height:38px;width:auto}
-.hdr-logo .fallback{color:#fff;font-weight:800;font-size:21px;letter-spacing:-.02em}
-
-.hdr-nav{display:flex;align-items:center;gap:26px;margin-left:auto}
-.hdr-nav a{
-  color:rgba(255,255,255,.86);text-decoration:none;font-size:15px;font-weight:600;
-  padding:8px 0;position:relative;
-}
-.hdr-nav a::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;
-  background:var(--riptide);transform:scaleX(0);transform-origin:left;
-  transition:transform .2s ease;
-}
-.hdr-nav a:hover{color:#fff}
-.hdr-nav a:hover::after{transform:scaleX(1)}
-
-.hdr-cta{
-  flex:none;background:var(--riptide);color:var(--navy);
-  padding:13px 22px;border-radius:var(--r);font-weight:700;font-size:15px;
-  text-decoration:none;transition:background .18s ease;
-}
-.hdr-cta:hover{background:#fff}
-
-.hdr-burger{
-  display:none;margin-left:auto;background:none;border:1px solid rgba(255,255,255,.4);
-  border-radius:var(--r);width:46px;height:44px;cursor:pointer;
-  align-items:center;justify-content:center;flex-direction:column;gap:5px;
-}
-.hdr-burger span{display:block;width:20px;height:2px;background:#fff;transition:transform .2s ease,opacity .2s ease}
-.hdr-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hdr-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.hdr-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-.hdr-mob{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,.12)}
-.hdr-mob.is-open{display:block}
-.hdr-mob ul{list-style:none;margin:0;padding:10px var(--gut) 24px}
-.hdr-mob li{border-bottom:1px solid rgba(255,255,255,.1)}
-.hdr-mob a{display:block;padding:16px 0;color:#fff;text-decoration:none;font-weight:600;font-size:17px}
-.hdr-mob .btn{margin-top:22px;width:100%;justify-content:center}
-
-@media (max-width:1000px){
-  .hdr-nav,.hdr-cta{display:none}
-  .hdr-burger{display:flex}
-}
-
-/* ============================================================
-   HERO — 'Connected Points' composition
-   Two intersecting lines divide the field into wedges, coloured
-   in the Riptide / Navy pair. Brand Guidelines pp.25–33.
-   ============================================================ */
-.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
-
-.hero-photo{
-  position:absolute;inset:0;z-index:0;
-  background-image:url("https://www.claglobal.com/media/0ujhtosj/what-we-do.jpg");
-  background-size:cover;background-position:62% 32%;
-  opacity:.34;filter:saturate(.55) contrast(1.05);
-}
-.hero-veil{
-  position:absolute;inset:0;z-index:1;
-  background:
-    linear-gradient(103deg,rgba(46,51,78,.97) 0%,rgba(46,51,78,.9) 38%,rgba(46,51,78,.42) 72%,rgba(46,51,78,.6) 100%);
-}
-.hero-cp{position:absolute;inset:0;z-index:2;width:100%;height:100%}
-
-.hero-in{position:relative;z-index:3;padding-top:clamp(150px,17vw,208px);padding-bottom:clamp(60px,7vw,92px)}
-.hero-copy{max-width:730px}
-.hero .eyebrow{color:var(--riptide)}
-.hero .h1{margin-bottom:26px;text-wrap:balance}
-.hero .h1 em{font-style:normal;color:var(--riptide)}
-.hero-lede{max-width:590px;color:rgba(255,255,255,.9);margin:0 0 40px;
-  font-size:clamp(17px,1.5vw,20px);line-height:1.62}
-.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
-
-/* Proof bar sitting on the hero base */
-.hero-proof{
-  position:relative;z-index:3;
-  border-top:1px solid rgba(255,255,255,.18);
-  background:rgba(46,51,78,.55);
-  backdrop-filter:blur(3px);
-}
-.hero-proof ul{
-  list-style:none;margin:0;padding:22px 0;
-  display:flex;flex-wrap:wrap;gap:14px 46px;align-items:baseline;
-}
-.hero-proof li{display:flex;align-items:baseline;gap:11px;font-size:15px;color:rgba(255,255,255,.82)}
-.hero-proof b{font-size:24px;font-weight:800;color:var(--riptide);letter-spacing:-.02em}
-
-/* ============================================================
-   SECTION SHELLS
-   ============================================================ */
 .sect{padding-block:var(--sect)}
-.sect-cloud{background:var(--cloud)}
-.sect-navy{background:var(--navy);color:#fff}
-.sect-navy .muted{color:rgba(255,255,255,.76)}
-.sect-navy .eyebrow{color:var(--riptide)}
-.sect-light .eyebrow{color:var(--riptide-s2)}
+.sect-grey{background:var(--grey-bg)}
+.sect-navy{background:var(--navy)}
+.sect-rip{background:var(--riptide-20)}
 
-.sect-head{max-width:760px;margin-bottom:clamp(38px,4.5vw,60px)}
-.sect-head .h2{margin-bottom:20px;text-wrap:balance}
-.sect-head .lede{color:var(--navy-80)}
-.sect-navy .sect-head .lede{color:rgba(255,255,255,.8)}
+.sect-head{max-width:860px;margin:0 auto clamp(34px,4.4vw,54px);text-align:center}
+.sect-head .h2{margin-bottom:18px}
+.sect-head .desc{color:var(--charcoal)}
+.sect-navy .sect-head .desc{color:var(--white)}
 
-/* ---------- Proposition band ---------- */
-.prop{background:var(--white)}
-.prop-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,88px);align-items:start}
-.prop-quote{
-  font-family:var(--serif);font-size:clamp(24px,2.6vw,33px);line-height:1.36;
-  font-weight:400;letter-spacing:-.01em;margin:0 0 28px;color:var(--navy);
+/* ------------------------------------------------------------
+   BUTTONS — Website Guidelines p.44
+   3px radius, 2px border, 20px / weight 400
+   ------------------------------------------------------------ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-size:clamp(17px,1.6vw,20px);font-weight:400;line-height:1.2;
+  padding:14px 30px;border-radius:3px;border:2px solid transparent;
+  text-decoration:none;cursor:pointer;text-align:center;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease;
 }
-.prop-quote span{color:var(--riptide-s2)}
-.prop-body p{margin:0 0 20px;color:var(--navy-80);font-size:17px}
-.prop-body p:last-of-type{margin-bottom:30px}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
 
-.pillars{display:grid;gap:2px;background:var(--navy-20);border-top:3px solid var(--riptide)}
-.pillar{background:var(--white);padding:26px 28px}
-.pillar h3{margin:0 0 9px;font-size:19px;font-weight:800;letter-spacing:-.01em}
-.pillar p{margin:0;font-size:15.5px;line-height:1.6;color:var(--navy-80)}
+.btn-navy{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.btn-navy:hover,.btn-navy:focus-visible{background:transparent;color:var(--navy);border-color:var(--navy)}
 
-@media (max-width:880px){.prop-grid{grid-template-columns:1fr}}
+.btn-outline-navy{background:transparent;border-color:var(--navy);color:var(--navy)}
+.btn-outline-navy:hover,.btn-outline-navy:focus-visible{background:var(--navy);color:var(--white)}
 
-/* ============================================================
+.btn-outline-white{background:transparent;border-color:var(--white);color:var(--white)}
+.btn-outline-white:hover,.btn-outline-white:focus-visible{background:var(--white);color:var(--navy)}
+
+.btn-white{background:var(--white);border-color:var(--white);color:var(--navy)}
+.btn-white:hover,.btn-white:focus-visible{background:transparent;color:var(--white);border-color:var(--white)}
+
+.linktext{font-size:18px;font-weight:500;color:var(--navy);text-decoration:none}
+.linktext:hover{text-decoration:underline}
+
+/* ------------------------------------------------------------
+   HEADER
+   ------------------------------------------------------------ */
+.hdr{background:var(--navy);position:sticky;top:0;z-index:100}
+.hdr-in{display:flex;align-items:center;gap:30px;min-height:78px;padding-block:12px}
+.hdr-logo{flex:none;text-decoration:none;display:flex;align-items:center}
+/* Logo is embedded rather than hotlinked from claglobal.com, so it renders
+   identically on any host and needs no text fallback. */
+.logo{display:block;flex:none;background-repeat:no-repeat;background-position:left center;
+  background-size:contain;aspect-ratio:151/48}
+.logo-white{background-image:var(--logo-white)}
+.logo-navy{background-image:var(--logo-navy)}
+.logo-hdr{height:38px}
+.logo-ftr{height:44px}
+.hdr-nav{display:flex;align-items:center;gap:28px;margin-left:auto}
+.hdr-nav a{color:var(--white);font-size:18px;font-weight:300;text-decoration:none}
+.hdr-nav a:hover{text-decoration:underline}
+.hdr .btn{flex:none;padding:11px 22px;font-size:17px}
+.hdr-burger{display:none;margin-left:auto;background:none;border:2px solid var(--white);border-radius:3px;
+  width:48px;height:44px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.hdr-burger span{display:block;width:20px;height:2px;background:var(--white)}
+.hdr-mob{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,.2)}
+.hdr-mob.is-open{display:block}
+.hdr-mob ul{list-style:none;margin:0;padding:6px var(--gut) 22px}
+.hdr-mob li{border-bottom:1px solid rgba(255,255,255,.16)}
+.hdr-mob a{display:block;padding:15px 0;color:var(--white);font-size:18px;font-weight:300;text-decoration:none}
+.hdr-mob .btn{margin-top:20px;width:100%}
+@media (max-width:1010px){.hdr-nav,.hdr-in>.btn{display:none}.hdr-burger{display:flex}}
+
+/* ------------------------------------------------------------
+   HERO — navy band, centred Georgia H1 + description.
+   Campaign variant carries a background image and CTAs.
+   ------------------------------------------------------------ */
+.hero{position:relative;background:var(--navy);overflow:hidden;text-align:center}
+.hero-bg{position:absolute;inset:0;
+  background-image:url("https://www.claglobal.com/media/0ujhtosj/what-we-do.jpg");
+  background-size:cover;background-position:center 34%;opacity:.26}
+.hero-bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(46,51,78,.62) 0%,rgba(46,51,78,.5) 50%,rgba(46,51,78,.78) 100%)}
+.hero-in{position:relative;z-index:1;padding-block:clamp(56px,8vw,96px)}
+.hero .h1{margin-bottom:22px;text-wrap:balance}
+.hero .desc{color:var(--white);max-width:900px;margin:0 auto}
+.hero-rule{display:block;width:64px;height:4px;background:var(--riptide);margin:0 auto 26px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+
+/* ------------------------------------------------------------
+   PROMOTIONAL TEXT ONLY
+   ------------------------------------------------------------ */
+.textonly{text-align:center}
+.textonly .body-copy{max-width:900px;margin:0 auto 20px}
+.textonly .body-copy:last-of-type{margin-bottom:0}
+.textonly .btn{margin-top:32px}
+
+/* ------------------------------------------------------------
+   BENEFIT COMPONENT — 4px coloured rule, H5 title, body copy.
+   Used for Membership Benefits and, per instruction, Services.
+   ------------------------------------------------------------ */
+.benefits{display:flex;flex-wrap:wrap;justify-content:center;gap:44px 46px}
+.benefit{flex:0 1 232px;min-width:220px}
+.benefit-rule{display:block;width:100%;height:4px;margin-bottom:20px;background:var(--navy)}
+.benefit .h5{margin-bottom:12px}
+.b-ultramarine{background:var(--ultramarine)}
+.b-vermilion{background:var(--vermilion)}
+.b-olive{background:var(--olive)}
+.b-mustard{background:var(--mustard)}
+.b-navy{background:var(--navy)}
+.b-riptide{background:var(--riptide)}
+.b-smoke{background:var(--smoke)}
+.benefit-link{margin-top:14px;display:inline-block}
+@media (max-width:560px){.benefits{gap:34px}.benefit{flex:1 1 100%}}
+
+/* ------------------------------------------------------------
+   STATISTICS — 4px riptide rule, Georgia figure, description
+   ------------------------------------------------------------ */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:54px}
+.stat-rule{display:block;width:100%;height:4px;background:var(--riptide);margin-bottom:34px}
+.stat b{display:block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(40px,5.6vw,57px);line-height:1.05;color:var(--navy);margin-bottom:10px}
+.stat span{display:block;font-size:clamp(19px,2vw,24px);font-weight:300;line-height:1.4;color:var(--charcoal)}
+.stats-note{margin:36px 0 0;font-size:16px;color:var(--charcoal-30);text-align:center}
+@media (max-width:800px){.stats{grid-template-columns:1fr;gap:34px}.stat-rule{margin-bottom:20px}}
+
+/* ------------------------------------------------------------
    VIDEO CAROUSEL — BESPOKE COMPONENT
-   ============================================================ */
-.vc{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.vc-wedge{position:absolute;top:0;right:0;width:min(46vw,620px);height:100%;z-index:0;opacity:.9}
-.vc > .wrap{position:relative;z-index:1}
+   Restyled to the website system: 4px rules, Georgia titles,
+   3px radius, navy outline controls, Museo Sans body copy.
+   ------------------------------------------------------------ */
+.vc-main{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(28px,3.6vw,52px);align-items:start}
+.vc-stage{position:relative;aspect-ratio:16/9;background:var(--navy);border-radius:3px;overflow:hidden}
+.vc-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vc-stage::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(46,51,78,.1) 0%,rgba(46,51,78,.06) 50%,rgba(46,51,78,.55) 100%)}
+.vc-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6}
 
-.vc-top{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;
-  margin-bottom:clamp(30px,3.4vw,44px)}
-.vc-top .sect-head{margin-bottom:0}
-
-.vc-count{
-  font-size:15px;font-weight:700;letter-spacing:.09em;color:rgba(255,255,255,.68);
-  display:flex;align-items:center;gap:14px;flex:none;
-}
-.vc-count b{color:var(--riptide);font-size:30px;font-weight:800;letter-spacing:-.02em;line-height:1}
-
-.vc-main{display:grid;grid-template-columns:1.55fr 1fr;gap:clamp(26px,3.2vw,46px);align-items:stretch}
-
-/* Stage */
-.vc-stage{position:relative;background:#1b1f33;border-radius:var(--r);overflow:hidden;
-  aspect-ratio:16/9;box-shadow:0 30px 70px rgba(0,0,0,.34)}
-.vc-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  transition:transform .5s ease,opacity .35s ease}
-.vc-stage:hover .vc-poster{transform:scale(1.035)}
-@media (prefers-reduced-motion:reduce){.vc-poster,.vc-stage:hover .vc-poster{transition:none;transform:none}}
-.vc-stage::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(180deg,rgba(27,31,51,.12) 0%,rgba(27,31,51,.06) 45%,rgba(27,31,51,.82) 100%);
-}
-.vc-stage iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
-
-.vc-play{
-  position:absolute;inset:0;z-index:4;width:100%;height:100%;
-  background:none;border:0;cursor:pointer;padding:0;
-  display:flex;align-items:center;justify-content:center;
-}
-.vc-play-dot{
-  width:clamp(66px,7vw,90px);height:clamp(66px,7vw,90px);border-radius:50%;
-  background:var(--riptide);color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  transition:transform .22s ease,background .22s ease;
-  box-shadow:0 10px 34px rgba(0,0,0,.3);
-}
-.vc-play:hover .vc-play-dot{transform:scale(1.09);background:#fff}
-@media (prefers-reduced-motion:reduce){.vc-play-dot,.vc-play:hover .vc-play-dot{transition:none;transform:none}}
+.vc-play{position:absolute;inset:0;z-index:4;width:100%;height:100%;padding:0;
+  background:none;border:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.vc-play-dot{width:clamp(62px,6.4vw,84px);height:clamp(62px,6.4vw,84px);border-radius:50%;
+  background:var(--riptide);color:var(--navy);display:flex;align-items:center;justify-content:center;
+  transition:background-color .18s ease}
+.vc-play:hover .vc-play-dot,.vc-play:focus-visible .vc-play-dot{background:var(--white)}
+@media (prefers-reduced-motion:reduce){.vc-play-dot{transition:none}}
 .vc-play-dot svg{margin-left:5px}
+.vc-stage-label{position:absolute;left:0;bottom:0;z-index:3;padding:18px 22px;margin:0;
+  pointer-events:none;color:var(--white);font-size:16px;font-weight:400}
 
-.vc-stage-label{
-  position:absolute;left:0;bottom:0;z-index:3;padding:20px 24px;pointer-events:none;
-  display:flex;align-items:center;gap:12px;
-}
-.vc-chip{
-  background:var(--riptide);color:var(--navy);font-size:11.5px;font-weight:800;
-  letter-spacing:.13em;text-transform:uppercase;padding:6px 11px;border-radius:var(--r);
-}
-.vc-dur{font-size:14px;font-weight:600;color:rgba(255,255,255,.85)}
+.vc-rule{display:block;width:100%;height:4px;background:var(--riptide);margin-bottom:20px}
+.vc-topic{font-size:16px;font-weight:400;color:var(--riptide-dark);margin:0 0 10px}
+.vc-detail h3{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.5vw,30px);
+  line-height:1.26;color:var(--navy);margin:0 0 16px}
+.vc-detail p{margin:0 0 22px;font-size:18px;font-weight:300;line-height:1.7;color:var(--charcoal)}
 
-/* Detail column */
-.vc-detail{display:flex;flex-direction:column;justify-content:center;padding-block:6px}
-.vc-detail h3{margin:0 0 16px;font-size:clamp(22px,2.2vw,29px);line-height:1.18;
-  font-weight:800;letter-spacing:-.018em;text-wrap:balance}
-.vc-detail p{margin:0 0 26px;color:rgba(255,255,255,.8);font-size:16.5px;line-height:1.62}
-.vc-meta{display:flex;align-items:center;gap:10px;margin-bottom:18px}
-.vc-meta span{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--riptide)}
-.vc-meta i{flex:1;height:1px;background:rgba(255,255,255,.22);font-style:normal}
-.vc-detail .textlink{color:var(--riptide);border-color:var(--riptide);align-self:flex-start}
-.vc-detail .textlink:hover{color:#fff;border-color:#fff}
-
-/* Rail */
-.vc-rail-wrap{margin-top:clamp(26px,3vw,40px)}
+.vc-rail-wrap{margin-top:clamp(30px,3.6vw,46px)}
 .vc-rail-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:16px}
-.vc-rail-head p{margin:0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  color:rgba(255,255,255,.6)}
-.vc-arrows{display:flex;gap:9px;flex:none}
-.vc-arrow{
-  width:46px;height:46px;border-radius:var(--r);cursor:pointer;
-  background:transparent;border:2px solid rgba(255,255,255,.34);color:#fff;
+.vc-rail-head p{margin:0;font-size:16px;font-weight:400;color:var(--riptide-dark)}
+.vc-arrows{display:flex;gap:10px;flex:none}
+.vc-arrow{width:48px;height:48px;border-radius:3px;cursor:pointer;
+  background:transparent;border:2px solid var(--navy);color:var(--navy);
   display:flex;align-items:center;justify-content:center;
-  transition:background .18s ease,border-color .18s ease,color .18s ease;
-}
-.vc-arrow:hover{background:var(--riptide);border-color:var(--riptide);color:var(--navy)}
+  transition:background-color .18s ease,color .18s ease}
+.vc-arrow:hover,.vc-arrow:focus-visible{background:var(--navy);color:var(--white)}
+@media (prefers-reduced-motion:reduce){.vc-arrow{transition:none}}
 
-.vc-rail{
-  display:grid;grid-template-columns:repeat(6,1fr);gap:12px;list-style:none;margin:0;padding:0;
-}
-.vc-thumb{
-  position:relative;width:100%;padding:0;cursor:pointer;overflow:hidden;
-  background:#1b1f33;border:0;border-radius:var(--r);
-  aspect-ratio:16/10;text-align:left;
-  opacity:.62;transition:opacity .2s ease,transform .2s ease;
-}
-.vc-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.vc-thumb::before{
-  content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(180deg,rgba(27,31,51,.05),rgba(27,31,51,.86));
-}
-.vc-thumb:hover{opacity:.9}
-.vc-thumb[aria-selected="true"]{opacity:1;transform:translateY(-3px)}
-@media (prefers-reduced-motion:reduce){.vc-thumb{transition:none;transform:none}}
+.vc-rail{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin:0;padding:0}
+.vc-thumb{position:relative;padding:0;cursor:pointer;background:none;border:0;text-align:left;
+  display:flex;flex-direction:column;gap:10px}
+.vc-thumb-rule{display:block;width:100%;height:4px;background:var(--rule-grey);
+  transition:background-color .18s ease}
+.vc-thumb:hover .vc-thumb-rule{background:var(--navy)}
+.vc-thumb[aria-selected="true"] .vc-thumb-rule{background:var(--riptide)}
+@media (prefers-reduced-motion:reduce){.vc-thumb-rule{transition:none}}
+.vc-thumb-img{position:relative;display:block;width:100%;aspect-ratio:16/10;overflow:hidden;
+  background:var(--navy);border-radius:3px}
+.vc-thumb-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;
+  transition:opacity .18s ease}
+.vc-thumb:hover .vc-thumb-img img{opacity:.85}
+.vc-thumb[aria-selected="true"] .vc-thumb-img img{opacity:1}
+.vc-thumb-n{position:absolute;left:8px;bottom:6px;z-index:2;color:var(--white);font-size:15px;font-weight:400}
+.vc-thumb-t{font-size:16px;font-weight:400;line-height:1.36;color:var(--navy);
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.vc-thumb[aria-selected="true"] .vc-thumb-t{font-weight:600}
 
-/* Active marker — a Connected Points wedge in the corner */
-.vc-thumb-mark{
-  position:absolute;top:0;right:0;z-index:3;
-  width:0;height:0;border-style:solid;border-width:0 40px 40px 0;
-  border-color:transparent var(--riptide) transparent transparent;
-  opacity:0;transition:opacity .2s ease;
-}
-.vc-thumb[aria-selected="true"] .vc-thumb-mark{opacity:1}
-.vc-thumb[aria-selected="true"]::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--riptide);z-index:3;
-}
-.vc-thumb-n{
-  position:absolute;left:10px;bottom:11px;z-index:4;
-  font-size:12px;font-weight:800;letter-spacing:.06em;color:rgba(255,255,255,.7);
-}
-.vc-thumb[aria-selected="true"] .vc-thumb-n{color:var(--riptide)}
-/* Film supplied later — stage falls back to a branded holding state */
-.vc-stage.is-empty .vc-play-dot{background:rgba(255,255,255,.22);color:#fff}
-.vc-thumb-t{
-  position:absolute;left:10px;right:10px;bottom:24px;z-index:2;
-  font-size:13px;font-weight:700;line-height:1.28;color:#fff;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-}
-
-@media (max-width:920px){
-  .vc-main{grid-template-columns:1fr}
-  .vc-detail{padding-block:0}
-}
+@media (max-width:920px){.vc-main{grid-template-columns:1fr}}
 @media (max-width:680px){
-  /* Rail becomes a snap-scrolling strip on mobile — Dal's note c5 */
-  .vc-rail{
-    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
-    gap:10px;padding-bottom:12px;-webkit-overflow-scrolling:touch;
-  }
-  .vc-rail::-webkit-scrollbar{height:4px}
-  .vc-rail::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:4px}
-  .vc-thumb{flex:0 0 58%;scroll-snap-align:start}
-  .vc-thumb-mark{border-width:0 30px 30px 0}
+  /* Snap-scrolling strip on mobile — Dal, comment c5 */
+  .vc-rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px}
+  .vc-thumb{flex:0 0 62%;scroll-snap-align:start}
 }
 
-/* ============================================================
-   BENEFITS GRID — reuses site card/grid pattern
-   ============================================================ */
-.ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--navy-20)}
-.ben{
-  background:var(--white);padding:34px 30px 36px;
-  display:flex;flex-direction:column;gap:12px;
-  transition:background .2s ease;
-}
-.ben:hover{background:var(--riptide-20)}
-.ben-icon{color:var(--riptide-s2);margin-bottom:4px}
-.ben h3{margin:0;font-size:20px;font-weight:800;letter-spacing:-.012em}
-.ben p{margin:0;font-size:16px;line-height:1.6;color:var(--navy-80)}
-.ben-last{
-  background:var(--navy);color:#fff;justify-content:center;gap:18px;
-}
-.ben-last:hover{background:var(--navy)}
-.ben-last h3{font-size:22px}
-.ben-last .textlink{color:var(--riptide);border-color:var(--riptide);align-self:flex-start}
-.ben-last .textlink:hover{color:#fff;border-color:#fff}
+/* ------------------------------------------------------------
+   FULL IMAGE PROMOTIONAL — brand anthem
+   ------------------------------------------------------------ */
+.anthem-frame{position:relative;aspect-ratio:16/9;background:var(--navy);overflow:hidden;border-radius:3px}
+.anthem-frame > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.anthem-frame::after{content:"";position:absolute;inset:0;background:rgba(46,51,78,.34)}
+.anthem-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:6}
+.anthem-frame .vc-play{z-index:5}
 
-@media (max-width:940px){.ben-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:600px){.ben-grid{grid-template-columns:1fr}}
+/* ------------------------------------------------------------
+   PROMOTIONAL COMPONENT — alternating image / text
+   ------------------------------------------------------------ */
+.promo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
+.promo + .promo{margin-top:clamp(40px,5vw,72px)}
+.promo-img{width:100%;aspect-ratio:526/350;object-fit:cover;border-radius:3px;background:var(--navy)}
+.promo-body .h3{margin-bottom:16px}
+.promo-body .body-copy{margin-bottom:26px}
+.promo-rev .promo-media{order:2}
+@media (max-width:780px){
+  .promo{grid-template-columns:1fr;gap:24px}
+  .promo-rev .promo-media{order:0}
+}
 
-/* ============================================================
-   STATS MODULE — reuses site statistics component
-   ============================================================ */
-.stats{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.stats-cp{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.85}
-.stats > .wrap{position:relative;z-index:1}
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;
-  background:rgba(255,255,255,.18);margin-top:clamp(28px,3.4vw,44px)}
-.stat{background:var(--navy);padding:38px 30px 40px}
-.stat b{
-  display:block;font-size:clamp(48px,6.2vw,76px);font-weight:800;line-height:1;
-  letter-spacing:-.04em;color:var(--riptide);margin-bottom:14px;
-}
-.stat span{display:block;font-size:16px;font-weight:600;color:rgba(255,255,255,.86);max-width:230px}
-.stats-note{margin:26px 0 0;font-size:13.5px;color:rgba(255,255,255,.55)}
-@media (max-width:760px){.stats-grid{grid-template-columns:1fr}.stat{padding:28px 24px 30px}}
+/* ------------------------------------------------------------
+   INSIGHTS — grey caption panel above, image beneath
+   (as shown in the supplied Insights screenshot)
+   ------------------------------------------------------------ */
+.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(22px,3vw,44px)}
+.ins{display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit}
+.ins-panel{background:var(--grey-bg);padding:24px 22px 28px;flex:1;border-radius:3px 3px 0 0}
+.ins-date{display:block;font-size:18px;font-weight:400;color:var(--navy);margin-bottom:10px}
+.ins-title{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.28;color:var(--navy);margin:0}
+.ins:hover .ins-title{text-decoration:underline}
+.ins-img{width:100%;aspect-ratio:348/250;object-fit:cover;background:var(--navy);border-radius:0 0 3px 3px}
+.ins-foot{margin-top:clamp(32px,4vw,50px);text-align:center}
+@media (max-width:900px){.ins-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto}}
 
-/* ============================================================
-   ANTHEM VIDEO — reuses site full-width video pattern
-   ============================================================ */
-.anthem{background:var(--cloud)}
-.anthem-frame{
-  position:relative;aspect-ratio:16/9;background:#1b1f33;overflow:hidden;border-radius:var(--r);
-  box-shadow:0 34px 80px rgba(46,51,78,.26);
-}
-.anthem-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9}
-.anthem-frame::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(46,51,78,.24),rgba(46,51,78,.62))}
-.anthem-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
-.anthem-frame .vc-play{z-index:6}
-.anthem-cap{
-  position:absolute;left:0;bottom:0;z-index:6;padding:26px clamp(22px,3vw,38px);
-  color:#fff;max-width:640px;pointer-events:none;
-}
-.anthem-cap h3{margin:0 0 8px;font-size:clamp(20px,2.2vw,27px);font-weight:800;letter-spacing:-.018em}
-.anthem-cap p{margin:0;font-size:16px;color:rgba(255,255,255,.85)}
+/* ------------------------------------------------------------
+   CONTACT + JOIN
+   ------------------------------------------------------------ */
+.conv-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(34px,5vw,72px);align-items:start}
+.conv-left .h2{margin-bottom:18px}
+.conv-left .body-copy{margin-bottom:24px}
+.conv-list{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:12px}
+.conv-list li{display:flex;gap:12px;align-items:flex-start;font-size:18px;font-weight:300;color:var(--charcoal)}
+.conv-list svg{flex:none;margin-top:6px;color:var(--riptide-dark)}
 
-/* ============================================================
-   SERVICES — reuses site link-panel pattern
-   ============================================================ */
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--navy-20)}
-.svc{
-  background:var(--white);padding:36px 32px 34px;text-decoration:none;color:inherit;
-  display:flex;flex-direction:column;gap:13px;position:relative;
-  transition:background .2s ease;
-}
-.svc::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--riptide);
-  transform:scaleY(0);transform-origin:top;transition:transform .24s ease;
-}
-.svc:hover{background:var(--cloud)}
-.svc:hover::before{transform:scaleY(1)}
-@media (prefers-reduced-motion:reduce){.svc::before{transition:none}}
-.svc h3{margin:0;font-size:24px;font-weight:800;letter-spacing:-.016em}
-.svc p{margin:0;font-size:16px;line-height:1.6;color:var(--navy-80);flex:1}
-.svc .go{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:15.5px;
-  color:var(--riptide-s2)}
-.svc:hover .go .arw{transform:translateX(4px)}
-.svc .go .arw{transition:transform .18s ease}
-@media (max-width:700px){.svc-grid{grid-template-columns:1fr}}
-
-/* ============================================================
-   LOCATIONS — reuses site two-panel pattern
-   ============================================================ */
-.loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,28px)}
-.loc{
-  position:relative;overflow:hidden;border-radius:var(--r);
-  min-height:clamp(300px,32vw,400px);display:flex;flex-direction:column;justify-content:flex-end;
-  padding:clamp(26px,3vw,40px);color:#fff;background:var(--navy);
-}
-.loc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;
-  transition:transform .55s ease}
-.loc:hover img{transform:scale(1.05)}
-@media (prefers-reduced-motion:reduce){.loc img,.loc:hover img{transition:none;transform:none}}
-.loc::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(180deg,rgba(46,51,78,.35) 0%,rgba(46,51,78,.92) 78%)}
-.loc > *{position:relative;z-index:2}
-.loc h3{margin:0 0 12px;font-size:clamp(22px,2.4vw,29px);font-weight:800;letter-spacing:-.018em}
-.loc p{margin:0 0 24px;font-size:16px;line-height:1.6;color:rgba(255,255,255,.84);max-width:430px}
-.loc .textlink{color:var(--riptide);border-color:var(--riptide);align-self:flex-start}
-.loc .textlink:hover{color:#fff;border-color:#fff}
-@media (max-width:760px){.loc-grid{grid-template-columns:1fr}}
-
-/* ============================================================
-   INSIGHTS — reuses site insights card component
-   ============================================================ */
-.ins-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.2vw,28px)}
-.ins{
-  background:var(--white);text-decoration:none;color:inherit;
-  display:flex;flex-direction:column;border-radius:var(--r);overflow:hidden;
-  box-shadow:0 1px 0 var(--navy-20),0 0 0 1px var(--navy-20);
-  transition:transform .22s ease,box-shadow .22s ease;
-}
-.ins:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(46,51,78,.16),0 0 0 1px var(--navy-20)}
-@media (prefers-reduced-motion:reduce){.ins,.ins:hover{transition:none;transform:none}}
-.ins-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--navy)}
-.ins-img img{width:100%;height:100%;object-fit:cover}
-.ins-body{padding:24px 24px 28px;display:flex;flex-direction:column;gap:11px;flex:1}
-.ins-date{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--riptide-s2)}
-.ins h3{margin:0;font-size:19px;font-weight:700;line-height:1.32;letter-spacing:-.01em;flex:1}
-.ins .go{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;color:var(--navy)}
-.ins:hover .go{color:var(--riptide-s2)}
-.ins-foot{margin-top:clamp(30px,3.4vw,44px)}
-@media (max-width:900px){.ins-grid{grid-template-columns:1fr;max-width:520px}}
-
-/* ============================================================
-   CONTACT + JOIN — short campaign form (Dal, comment c3)
-   ============================================================ */
-.conv{background:var(--navy);color:#fff;position:relative;overflow:hidden}
-.conv-cp{position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:.9}
-.conv > .wrap{position:relative;z-index:1}
-.conv-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(38px,5.5vw,80px);align-items:start}
-
-.conv-left .h2{margin-bottom:20px;text-wrap:balance}
-.conv-left > p{color:rgba(255,255,255,.82);font-size:17.5px;line-height:1.62;margin:0 0 30px}
-.conv-list{list-style:none;margin:0 0 34px;padding:0;display:grid;gap:14px}
-.conv-list li{display:flex;gap:13px;align-items:flex-start;font-size:16px;color:rgba(255,255,255,.88)}
-.conv-list svg{flex:none;margin-top:3px;color:var(--riptide)}
-.conv-alt{
-  border-top:1px solid rgba(255,255,255,.2);padding-top:26px;
-  display:flex;flex-wrap:wrap;align-items:center;gap:16px;
-}
-.conv-alt p{margin:0;font-size:15.5px;color:rgba(255,255,255,.72)}
-
-/* Form card */
-.form-card{background:#fff;color:var(--navy);border-radius:var(--r);padding:clamp(28px,3.2vw,42px);
-  box-shadow:0 30px 74px rgba(0,0,0,.3)}
-.form-card > h3{margin:0 0 6px;font-size:23px;font-weight:800;letter-spacing:-.016em}
-.form-card > .form-sub{margin:0 0 26px;font-size:15.5px;color:var(--navy-80)}
-.f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.f{margin-bottom:16px}
-.f label{display:block;font-size:13.5px;font-weight:700;margin-bottom:7px;letter-spacing:.01em}
-.f .req{color:var(--riptide-s2)}
-.f input,.f select,.f textarea{
-  width:100%;font-family:var(--sans);font-size:16px;color:var(--navy);
-  padding:14px 15px;border:1.5px solid var(--navy-40);border-radius:var(--r);
-  background:var(--white);transition:border-color .18s ease,box-shadow .18s ease;
-}
-.f textarea{resize:vertical;min-height:104px}
+.form-card{background:var(--white);border-radius:3px;padding:clamp(26px,3.2vw,40px)}
+.form-card .h3{font-size:clamp(22px,2.4vw,26px);margin-bottom:6px}
+.form-sub{margin:0 0 24px;font-size:18px;font-weight:300;color:var(--charcoal-30)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{margin-bottom:18px}
+.f label{display:block;font-size:16px;font-weight:400;color:var(--navy);margin-bottom:7px}
+.f input,.f select,.f textarea{width:100%;font-family:var(--sans);font-size:18px;font-weight:300;
+  color:var(--charcoal);padding:13px 14px;border:1px solid var(--smoke);border-radius:3px;background:var(--white)}
+.f textarea{resize:vertical;min-height:100px}
 .f select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' fill='none' stroke='%232E334E' stroke-width='2'/></svg>");
-  background-repeat:no-repeat;background-position:right 15px center}
-.f input:focus,.f select:focus,.f textarea:focus{
-  border-color:var(--riptide-s2);box-shadow:0 0 0 3px var(--riptide-40);outline:none}
-.f-consent{display:flex;gap:12px;align-items:flex-start;margin:6px 0 22px}
-.f-consent input{width:19px;height:19px;flex:none;margin-top:2px;accent-color:var(--riptide-s2)}
-.f-consent label{font-size:14px;font-weight:400;line-height:1.55;color:var(--navy-80);margin:0}
-.f-consent a{color:var(--riptide-s2);font-weight:600}
-.form-card .btn{width:100%;justify-content:center}
-.form-foot{margin:16px 0 0;font-size:13px;color:var(--navy-60);text-align:center}
-
+  background-repeat:no-repeat;background-position:right 14px center}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--navy)}
+.f-consent{display:flex;gap:12px;align-items:flex-start;margin:4px 0 24px}
+.f-consent input{width:20px;height:20px;flex:none;margin-top:3px;accent-color:var(--navy)}
+.f-consent label{font-size:16px;font-weight:300;line-height:1.55;color:var(--charcoal);margin:0}
+.f-consent a{color:var(--navy)}
+.form-card .btn{width:100%}
+.form-foot{margin:14px 0 0;font-size:16px;color:var(--charcoal-30);text-align:center}
 @media (max-width:880px){.conv-grid{grid-template-columns:1fr}}
 @media (max-width:520px){.f-row{grid-template-columns:1fr;gap:0}}
 
-/* ============================================================
-   FOOTER — reuses site footer
-   ============================================================ */
-.ftr{background:var(--charcoal);color:rgba(255,255,255,.68);padding-block:clamp(46px,5vw,66px) 34px;
-  font-size:14px;line-height:1.7}
-.ftr-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;
-  padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14)}
-.ftr-logo img{height:44px;width:auto;margin-bottom:20px}
-.ftr h4{margin:0 0 14px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff}
-.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
-.ftr a{color:rgba(255,255,255,.68);text-decoration:none}
-.ftr a:hover{color:var(--riptide)}
-.ftr-legal{padding-top:26px;font-size:12.5px;line-height:1.65;color:rgba(255,255,255,.44);max-width:1000px}
-.ftr-legal a{color:rgba(255,255,255,.6);text-decoration:underline}
-.ftr-social{display:flex;gap:12px;margin-top:4px}
-.ftr-social a{
-  width:38px;height:38px;border:1px solid rgba(255,255,255,.26);border-radius:var(--r);
-  display:flex;align-items:center;justify-content:center;color:#fff;
-  transition:background .18s ease,border-color .18s ease,color .18s ease;
-}
-.ftr-social a:hover{background:var(--riptide);border-color:var(--riptide);color:var(--charcoal)}
-@media (max-width:860px){.ftr-top{grid-template-columns:1fr 1fr;gap:30px}}
-@media (max-width:520px){.ftr-top{grid-template-columns:1fr}}
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+.ftr{background:var(--navy);color:var(--white);padding-block:clamp(44px,5vw,64px) 34px}
+.ftr-top{display:grid;grid-template-columns:1.55fr 1fr 1fr .8fr;gap:36px}
+.ftr-logo{margin-bottom:24px}
+.ftr h4{font-family:var(--serif);font-weight:300;font-size:24px;color:var(--white);margin:0 0 16px}
+.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+.ftr a{color:var(--white);font-size:18px;font-weight:300;text-decoration:none}
+.ftr a:hover{text-decoration:underline}
+.ftr-legal{font-size:18px;font-weight:300;line-height:1.6;color:var(--white)}
+.ftr-social{display:flex;gap:12px;margin-top:2px}
+.ftr-social a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.4);border-radius:3px;color:var(--white)}
+.ftr-social a:hover{background:var(--white);color:var(--navy)}
+.ftr-disclaimer{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);
+  font-size:16px;font-weight:300;line-height:1.6;color:var(--disclaimer)}
+.ftr-disclaimer a{font-size:16px;color:var(--disclaimer);text-decoration:underline}
+@media (max-width:900px){.ftr-top{grid-template-columns:1fr 1fr;gap:32px}}
+@media (max-width:560px){.ftr-top{grid-template-columns:1fr}}
 
-/* ============================================================
-   Scroll reveal
-   ============================================================ */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-.rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
-
-/* Utility */
 .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
   clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
@@ -629,17 +375,12 @@ textarea:focus-visible,[tabindex]:focus-visible{
 
 <a class="skip" href="#main">Skip to content</a>
 
-<!-- ==========================================================
-     HEADER — campaign variant (BESPOKE TREATMENT)
-     ========================================================== -->
-<header class="hdr" id="hdr">
+<!-- ================= HEADER ================= -->
+<header class="hdr on-navy">
   <div class="wrap hdr-in">
     <a class="hdr-logo" href="https://www.claglobal.com/" aria-label="CLA Global home">
-      <img src="https://www.claglobal.com/media/efolhmv4/cla-global-logo.svg" alt="CLA Global"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span class="fallback" style="display:none">CLA Global</span>
+      <span class="logo logo-white logo-hdr" role="img" aria-label="CLA Global"></span>
     </a>
-
     <nav class="hdr-nav" aria-label="Campaign navigation">
       <a href="#membership">Membership</a>
       <a href="#films">Campaign films</a>
@@ -647,14 +388,11 @@ textarea:focus-visible,[tabindex]:focus-visible{
       <a href="#network">Our network</a>
       <a href="#talk">Contact</a>
     </nav>
-
-    <a class="hdr-cta" href="https://www.claglobal.com/who-we-are/join/">Join CLA Global</a>
-
+    <a class="btn btn-outline-white" href="https://www.claglobal.com/who-we-are/join/">Join CLA Global</a>
     <button class="hdr-burger" id="burger" aria-expanded="false" aria-controls="mobnav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
-
   <div class="hdr-mob" id="mobnav">
     <ul>
       <li><a href="#membership">Membership</a></li>
@@ -664,181 +402,86 @@ textarea:focus-visible,[tabindex]:focus-visible{
       <li><a href="#insights">Insights</a></li>
       <li><a href="#talk">Contact</a></li>
     </ul>
-    <div class="wrap" style="padding-bottom:26px">
-      <a class="btn btn-primary" href="https://www.claglobal.com/who-we-are/join/">Join CLA Global</a>
+    <div class="wrap" style="padding-bottom:24px">
+      <a class="btn btn-outline-white" href="https://www.claglobal.com/who-we-are/join/">Join CLA Global</a>
     </div>
   </div>
 </header>
 
 <main id="main">
 
-<!-- ==========================================================
-     HERO — 'Connected Points' composition (BESPOKE)
-     ========================================================== -->
-<section class="hero">
-  <div class="hero-photo" aria-hidden="true"></div>
-  <div class="hero-veil" aria-hidden="true"></div>
-
-  <!-- Connected Points: two intersecting lines, Riptide/Navy pair -->
-  <svg class="hero-cp" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-    <!-- third set: white wedge, low opacity, sitting behind (top region) -->
-    <polygon points="52,0 100,0 100,30 82.3,45.5" fill="#FFFFFF" opacity="0.05"/>
-    <!-- coloured pair: riptide right wedge, deep navy bottom wedge -->
-    <polygon points="82.3,45.5 100,30 100,72" fill="#7DD2D3" opacity="0.95"/>
-    <polygon points="82.3,45.5 100,72 100,100 20,100" fill="#1D2136" opacity="0.55"/>
-    <!-- the two intersecting lines themselves -->
-    <line x1="100" y1="30" x2="20" y2="100" stroke="#7DD2D3" stroke-width="0.22" opacity="0.8"
-          vector-effect="non-scaling-stroke"/>
-    <line x1="52" y1="0" x2="100" y2="72" stroke="#7DD2D3" stroke-width="0.22" opacity="0.8"
-          vector-effect="non-scaling-stroke"/>
-  </svg>
-
+<!-- ================= HERO ================= -->
+<section class="hero on-navy">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap hero-in">
-    <div class="hero-copy">
-      <p class="eyebrow">Membership of CLA Global</p>
-      <h1 class="h1">For those who <em>drive growth</em></h1>
-      <p class="hero-lede">
-        CLA Global is a professional services network designed to help realize the ambitions of
-        privately owned, fast-growing, mid-market clients with cross-border needs.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#talk">
-          Talk to us about membership
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
-        <a class="btn btn-ghost-light" href="#films">
-          <svg width="13" height="15" viewBox="0 0 13 15" fill="currentColor" aria-hidden="true">
-            <path d="M13 7.5L0 15V0z"/></svg>
-          Watch the films
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero-proof">
-    <div class="wrap">
-      <ul>
-        <li><b>15,000+</b> <span>personnel across the network</span></li>
-        <li><b>230+</b> <span>offices worldwide</span></li>
-        <li><b>Top 15</b> <span>global accounting network</span></li>
-      </ul>
+    <span class="hero-rule" aria-hidden="true"></span>
+    <h1 class="h1">For Those Who Drive Growth</h1>
+    <p class="desc">CLA Global is a professional services network designed to help realize the
+      ambitions of privately owned, fast-growing, mid-market clients with cross-border needs.</p>
+    <div class="hero-actions">
+      <a class="btn btn-white" href="#talk">Enquire about membership</a>
+      <a class="btn btn-outline-white" href="#films">Watch the films</a>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     PROPOSITION — reuses site content-section pattern
-     ========================================================== -->
-<section class="sect sect-light prop" id="membership">
-  <div class="wrap">
-    <div class="prop-grid">
-      <div class="rv">
-        <p class="eyebrow">Why CLA Global</p>
-        <p class="prop-quote">
-          Our member firms are united by a shared spirit of collegiality and exchange, a desire to
-          shape the future of our network, and <span>a drive to accelerate growth</span> for their
-          clients and their people.
-        </p>
-        <div class="prop-body">
-          <p>
-            CLA Global was founded on 1 July 2022 by CliftonLarsonAllen LLP and S&amp;W (previously
-            Evelyn Partners). Member firms provide services to clients of all sizes, with a
-            particular emphasis on privately owned, fast-growing, mid-market clients with
-            cross-border needs.
-          </p>
-          <a class="textlink" href="https://www.claglobal.com/who-we-are/">
-            Who we are
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="pillars rv">
-        <div class="pillar">
-          <h3>A platform for growth</h3>
-          <p>Built for firms that want to do more and move faster, our flexible network supports
-             scalability while offering members the chance to shape our future.</p>
-        </div>
-        <div class="pillar">
-          <h3>Shared ambition</h3>
-          <p>Our members all share the entrepreneurial spirit and international ambitions of their
-             privately owned, fast-growing, mid-market clients.</p>
-        </div>
-        <div class="pillar">
-          <h3>Accelerated change</h3>
-          <p>We value a growth mindset. Together, we pool ideas, investments, and technology to
-             upskill member firm teams, evolve client offerings, and grow.</p>
-        </div>
-      </div>
+<!-- ================= PURPOSE ================= -->
+<section class="sect" id="membership">
+  <div class="wrap textonly">
+    <div class="sect-head">
+      <h2 class="h2">Why Join CLA Global?</h2>
     </div>
+    <p class="body-copy">Our member firms are united by a shared spirit of collegiality and exchange,
+      a desire to shape the future of our network, and a drive to accelerate the growth of their
+      clients and people.</p>
+    <p class="body-copy">CLA Global was founded on 1 July 2022 by CliftonLarsonAllen LLP and S&amp;W
+      (previously Evelyn Partners). Member firms provide services to clients of all sizes, with a
+      particular emphasis on privately owned, fast-growing, mid-market clients with cross-border needs.</p>
+    <a class="btn btn-navy" href="https://www.claglobal.com/who-we-are/">Who We Are</a>
   </div>
 </section>
 
-<!-- ==========================================================
-     VIDEO CAROUSEL — BESPOKE COMPONENT
-     ========================================================== -->
-<section class="sect vc" id="films" aria-labelledby="films-h">
-  <svg class="vc-wedge" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-    <polygon points="36,0 100,0 100,100 74,100" fill="#FFFFFF" opacity="0.035"/>
-    <polygon points="76,0 100,0 100,22" fill="#7DD2D3" opacity="0.5"/>
-    <line x1="36" y1="0" x2="74" y2="100" stroke="#7DD2D3" stroke-width="0.2" opacity="0.4"
-          vector-effect="non-scaling-stroke"/>
-  </svg>
-
+<!-- ================= VIDEO CAROUSEL — BESPOKE ================= -->
+<section class="sect sect-grey" id="films" aria-labelledby="films-h">
   <div class="wrap">
-    <div class="vc-top rv">
-      <div class="sect-head">
-        <p class="eyebrow">The campaign films</p>
-        <h2 class="h2" id="films-h">Six reasons firms are joining us</h2>
-        <p class="lede">Short films from across the network on what membership actually changes —
-          for your firm, your clients and your people.</p>
-      </div>
-      <p class="vc-count"><b id="vc-now">01</b> <span>/ 06</span></p>
+    <div class="sect-head">
+      <h2 class="h2" id="films-h">The Campaign Films</h2>
+      <p class="desc">Short films from across the network on what membership changes for your firm,
+        your clients and your people.</p>
     </div>
 
-    <div class="vc-main rv">
-      <!-- Stage -->
+    <div class="vc-main">
       <div class="vc-stage" id="vc-stage">
         <img class="vc-poster" id="vc-poster" src="" alt="">
-        <div class="vc-stage-label">
-          <span class="vc-chip" id="vc-chip">Film 01</span>
-          <span class="vc-dur" id="vc-dur">2:14</span>
-        </div>
+        <p class="vc-stage-label" id="vc-stage-label"></p>
         <button class="vc-play" id="vc-play" type="button">
           <span class="vc-play-dot">
-            <svg width="22" height="26" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true">
-              <path d="M22 13L0 26V0z"/></svg>
+            <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true">
+              <path d="M20 12L0 24V0z"/></svg>
           </span>
           <span class="sr" id="vc-play-label">Play film</span>
         </button>
       </div>
 
-      <!-- Detail -->
       <div class="vc-detail">
-        <div class="vc-meta"><span id="vc-cat">Membership</span><i></i></div>
+        <span class="vc-rule" aria-hidden="true"></span>
+        <p class="vc-topic" id="vc-topic"></p>
         <h3 id="vc-title"></h3>
         <p id="vc-desc"></p>
-        <a class="textlink" id="vc-link" href="#">
-          <span id="vc-linktext">Find out more</span>
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
+        <a class="linktext" id="vc-link" href="#"><span id="vc-linktext">Find out more</span></a>
       </div>
     </div>
 
-    <!-- Rail -->
-    <div class="vc-rail-wrap rv">
+    <div class="vc-rail-wrap">
       <div class="vc-rail-head">
-        <p>All six films</p>
+        <p id="vc-count">Film 01 of 06</p>
         <div class="vc-arrows">
           <button class="vc-arrow" id="vc-prev" type="button" aria-label="Previous film">
-            <svg width="15" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <svg width="17" height="13" viewBox="0 0 16 12" fill="none" aria-hidden="true">
               <path d="M6 1L1 6l5 5M1 6h15" stroke="currentColor" stroke-width="2"/></svg>
           </button>
           <button class="vc-arrow" id="vc-next" type="button" aria-label="Next film">
-            <svg width="15" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <svg width="17" height="13" viewBox="0 0 16 12" fill="none" aria-hidden="true">
               <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
           </button>
         </div>
@@ -849,353 +492,281 @@ textarea:focus-visible,[tabindex]:focus-visible{
   </div>
 </section>
 
-<!-- ==========================================================
-     BENEFITS — reuses site card grid
-     ========================================================== -->
-<section class="sect sect-light sect-cloud" id="benefits">
+<!-- ================= MEMBERSHIP BENEFITS ================= -->
+<section class="sect" id="benefits">
   <div class="wrap">
-    <div class="sect-head rv">
-      <p class="eyebrow">Membership benefits</p>
-      <h2 class="h2">What membership gives your firm</h2>
-      <p class="lede">Seven areas where the network does the work with you — from technology
-        investment to talent, brand and quality.</p>
+    <div class="sect-head">
+      <h2 class="h2">CLA Global Membership Benefits</h2>
     </div>
-
-    <div class="ben-grid rv">
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 27l8-9 6 5 12-14"/><path d="M22 9h7v7"/></svg></span>
-        <h3>Sustainable growth</h3>
-        <p>Get ahead with support for everything from introducing new services to navigating M&amp;A
-           opportunities for your firm.</p>
+    <div class="benefits">
+      <div class="benefit">
+        <span class="benefit-rule b-ultramarine" aria-hidden="true"></span>
+        <h3 class="h5">Sustainable Growth</h3>
+        <p class="body-copy">Get ahead with support for everything from introducing new services to
+          navigating M&amp;A opportunities for your firm.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="6" width="26" height="17"/><path d="M11 28h10M16 23v5"/><path d="M9 15l3 3 4-6 4 4 3-4"/></svg></span>
-        <h3>Technology &amp; innovation</h3>
-        <p>Stay updated on the latest tech, AI and automation advances, and benefit from pooled
-           technology investments at our Global Innovation Exchange event.</p>
+      <div class="benefit">
+        <span class="benefit-rule b-vermilion" aria-hidden="true"></span>
+        <h3 class="h5">Technology &amp; Innovation</h3>
+        <p class="body-copy">Stay updated on the latest tech, AI and automation advances, and benefit
+          from pooled technology investments at our Global Innovation Exchange event.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="10" r="5"/><path d="M3 28c0-5 4-9 9-9s9 4 9 9"/><path d="M22 6a5 5 0 010 9"/><path d="M24 19c3 1 5 4 5 9"/></svg></span>
-        <h3>People &amp; culture</h3>
-        <p>Attract and retain the talent you need to grow with our Global Mobility Program,
-           signature leadership training, and technical updates.</p>
+      <div class="benefit">
+        <span class="benefit-rule b-olive" aria-hidden="true"></span>
+        <h3 class="h5">People &amp; Culture</h3>
+        <p class="body-copy">Attract and retain the talent you need to grow with our Global Mobility
+          Program, signature leadership and development training, and technical updates.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="16" cy="16" r="13"/><path d="M3 16h26M16 3c4 4 4 22 0 26M16 3c-4 4-4 22 0 26"/></svg></span>
-        <h3>Clients &amp; markets</h3>
-        <p>Collaborate with other firms to explore client opportunities, develop accelerated growth
-           plans, and increase cross-border revenue.</p>
+      <div class="benefit">
+        <span class="benefit-rule b-mustard" aria-hidden="true"></span>
+        <h3 class="h5">Clients &amp; Markets</h3>
+        <p class="body-copy">Collaborate with other firms to explore client opportunities, develop
+          accelerated growth plans, and increase cross-border revenue.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="8" cy="8" r="4"/><circle cx="24" cy="8" r="4"/><circle cx="16" cy="24" r="4"/>
-            <path d="M10 11l5 9M22 11l-5 9M12 8h8"/></svg></span>
-        <h3>Service line collaboration</h3>
-        <p>Find new ways to grow with your clients by developing best practices in business
-           development and service delivery with other specialists.</p>
+      <div class="benefit">
+        <span class="benefit-rule b-navy" aria-hidden="true"></span>
+        <h3 class="h5">Service Line Collaboration</h3>
+        <p class="body-copy">Find new ways to grow with your clients by developing best practices in
+          business development and service delivery with other service line specialists.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 3l4 8 9 1-6.5 6.2L24 27l-8-4.3L8 27l1.5-8.8L3 12l9-1z"/></svg></span>
-        <h3>Stand-out brand</h3>
-        <p>Strengthen your market presence with a global brand that has real momentum. We support
-           brand implementation and activation in your market.</p>
+      <div class="benefit">
+        <span class="benefit-rule b-riptide" aria-hidden="true"></span>
+        <h3 class="h5">Stand-out Brand</h3>
+        <p class="body-copy">Strengthen your market presence with a global brand that has real
+          momentum. We'll support you with brand implementation and activation in your market.</p>
       </div>
-      <div class="ben">
-        <span class="ben-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 3l11 4v9c0 7-4.6 11.6-11 13-6.4-1.4-11-6-11-13V7z"/><path d="M11 16l3.5 3.5L21 13"/></svg></span>
-        <h3>Risk &amp; quality</h3>
-        <p>Benefit from a network-wide approach to risk and quality through aligned policies,
-           standards, and ways of working.</p>
-      </div>
-      <div class="ben ben-last">
-        <h3>See all seven benefits in detail</h3>
-        <a class="textlink" href="https://www.claglobal.com/who-we-are/why-cla-global/">
-          Explore member benefits
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
+      <div class="benefit">
+        <span class="benefit-rule b-smoke" aria-hidden="true"></span>
+        <h3 class="h5">Risk &amp; Quality</h3>
+        <p class="body-copy">Benefit from a network-wide approach to risk and quality through aligned
+          policies, standards, and ways of working.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     STATS — reuses site statistics module
-     ========================================================== -->
-<section class="sect stats" id="proof">
-  <svg class="stats-cp" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-    <polygon points="0,0 30,0 8,100 0,100" fill="#FFFFFF" opacity="0.04"/>
-    <polygon points="0,0 12,0 0,42" fill="#7DD2D3" opacity="0.4"/>
-    <line x1="30" y1="0" x2="8" y2="100" stroke="#7DD2D3" stroke-width="0.2" opacity="0.35"
-          vector-effect="non-scaling-stroke"/>
-  </svg>
+<!-- ================= STATISTICS ================= -->
+<section class="sect sect-grey" id="proof">
   <div class="wrap">
-    <div class="sect-head rv" style="max-width:640px">
-      <p class="eyebrow">Proof points</p>
-      <h2 class="h2">The power behind our membership</h2>
+    <div class="sect-head">
+      <h2 class="h2">The Power Behind Our Membership</h2>
     </div>
-    <div class="stats-grid rv">
-      <div class="stat"><b data-count="15000" data-suffix="+">15,000+</b><span>Personnel across the network</span></div>
-      <div class="stat"><b data-count="230" data-suffix="+">230+</b><span>Offices around the world</span></div>
-      <div class="stat"><b data-count="15" data-prefix="Top ">Top 15</b><span>Global accounting network, IAB World Survey</span></div>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-rule" aria-hidden="true"></span>
+        <b>15,000+</b><span>Personnel</span>
+      </div>
+      <div class="stat">
+        <span class="stat-rule" aria-hidden="true"></span>
+        <b>235+</b><span>Offices</span>
+      </div>
+      <div class="stat">
+        <span class="stat-rule" aria-hidden="true"></span>
+        <b>1,600+</b><span>Partners and equivalents</span>
+      </div>
     </div>
-    <p class="stats-note rv">Figures shown are placeholders pulled from claglobal.com — final numbers to be
-      confirmed by CLA Global before build.</p>
+    <p class="stats-note">Figures as shown on claglobal.com — to be confirmed by CLA Global before build.</p>
   </div>
 </section>
 
-<!-- ==========================================================
-     BRAND ANTHEM VIDEO — reuses site video pattern
-     ========================================================== -->
-<section class="sect anthem sect-light" id="anthem">
+<!-- ================= BRAND ANTHEM ================= -->
+<section class="sect sect-navy on-navy" id="anthem">
   <div class="wrap">
-    <div class="sect-head rv" style="max-width:680px">
-      <p class="eyebrow">Brand anthem</p>
-      <h2 class="h2">Why join CLA Global?</h2>
-      <p class="lede">Ours is a culture of diversity and inclusion that uses our combined strengths as
-        our greatest competitive advantage. Watch the film to find out why you should join.</p>
+    <div class="sect-head">
+      <h2 class="h2">Watch Our Brand Anthem</h2>
+      <p class="desc">Ours is a culture of diversity and inclusion that uses our combined strengths as
+        our greatest competitive advantage. Watch the video to find out why you should join CLA Global.</p>
     </div>
-    <div class="anthem-frame rv" id="anthem-frame">
+    <div class="anthem-frame" id="anthem-frame">
       <img src="https://img.youtube.com/vi/ZBJ1Kh7as3U/maxresdefault.jpg" alt="" loading="lazy" decoding="async">
       <button class="vc-play" type="button" id="anthem-play">
         <span class="vc-play-dot">
-          <svg width="22" height="26" viewBox="0 0 22 26" fill="currentColor" aria-hidden="true">
-            <path d="M22 13L0 26V0z"/></svg>
+          <svg width="20" height="24" viewBox="0 0 20 24" fill="currentColor" aria-hidden="true">
+            <path d="M20 12L0 24V0z"/></svg>
         </span>
         <span class="sr">Play the brand anthem film</span>
       </button>
-      <div class="anthem-cap">
-        <h3>For those who drive growth</h3>
-        <p>The CLA Global brand anthem · 2 min</p>
-      </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     SERVICES — reuses site link panels
-     ========================================================== -->
-<section class="sect sect-light" id="services">
+<!-- ================= SERVICES ================= -->
+<section class="sect" id="services">
   <div class="wrap">
-    <div class="sect-head rv">
-      <p class="eyebrow">What we do</p>
-      <h2 class="h2">Four service lines, one network</h2>
-      <p class="lede">CLA Global member firms provide services across a range of industries including
+    <div class="sect-head">
+      <h2 class="h2">What We Do</h2>
+      <p class="desc">CLA Global member firms provide services across a range of industries including
         audit, tax, advisory and outsourcing.</p>
     </div>
-    <div class="svc-grid rv">
-      <a class="svc" href="https://www.claglobal.com/what-we-do/audit/">
-        <h3>Audit</h3>
-        <p>Audits conducted by member firms take a systematic and deep look into business financials
-           and processes, revealing insights that strengthen client trust and satisfaction.</p>
-        <span class="go">More information
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
-      </a>
-      <a class="svc" href="https://www.claglobal.com/what-we-do/tax/">
-        <h3>Tax</h3>
-        <p>Lean on member firms' tax professionals in key international jurisdictions to help drive
-           value and stay on top of legislative and institutional developments.</p>
-        <span class="go">More information
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
-      </a>
-      <a class="svc" href="https://www.claglobal.com/what-we-do/advisory/">
-        <h3>Advisory</h3>
-        <p>With extensive international reach, we can assemble a consulting team that understands
-           the ins and outs of your sector and the latest reporting obligations.</p>
-        <span class="go">More information
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
-      </a>
-      <a class="svc" href="https://www.claglobal.com/what-we-do/outsourcing/">
-        <h3>Outsourcing</h3>
-        <p>Enhance productivity and gain control over costs. Use member firms to support and
-           complement your in-house talent, reinvesting savings into business growth.</p>
-        <span class="go">More information
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ==========================================================
-     LOCATIONS — reuses site two-panel pattern
-     ========================================================== -->
-<section class="sect sect-light sect-cloud" id="network">
-  <div class="wrap">
-    <div class="sect-head rv">
-      <p class="eyebrow">Global reach</p>
-      <h2 class="h2">Two ways to be part of the network</h2>
-    </div>
-    <div class="loc-grid rv">
-      <div class="loc">
-        <img src="https://www.claglobal.com/media/0ujhtosj/what-we-do.jpg" alt="" loading="lazy" decoding="async">
-        <h3>Network firms</h3>
-        <p>Our network members are highly collaborative with a commitment to build and drive
-           CLA Global's strategy. They adopt the CLA Global name and brand identity, which helps
-           elevate members through a shared identity across markets.</p>
-        <a class="textlink" href="https://www.claglobal.com/locations-network-firms/">
-          Find a firm
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
+    <div class="benefits">
+      <div class="benefit">
+        <span class="benefit-rule b-ultramarine" aria-hidden="true"></span>
+        <h3 class="h5">Audit</h3>
+        <p class="body-copy">Audits conducted by CLA Global member firms take a systematic and deep
+          look into business financials and processes, revealing valuable insights for identifying
+          gaps and risks.</p>
+        <a class="linktext benefit-link" href="https://www.claglobal.com/what-we-do/audit/">More Information</a>
       </div>
-      <div class="loc">
-        <img src="https://www.claglobal.com/media/aqcnicy2/building-cyber-resilience-website-2.jpg" alt="" loading="lazy" decoding="async">
-        <h3>Alliance firms</h3>
-        <p>An alliance membership offers global resources and reach in a flexible model. Our alliance
-           members experience the benefits of a CLA Global membership without the requirements of a
-           network membership.</p>
-        <a class="textlink" href="https://www.claglobal.com/locations-alliance-firms/">
-          Find a firm
-          <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-            <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-        </a>
+      <div class="benefit">
+        <span class="benefit-rule b-vermilion" aria-hidden="true"></span>
+        <h3 class="h5">Tax</h3>
+        <p class="body-copy">Lean on our member firms' tax professionals in key international
+          jurisdictions to help drive value and stay on top of legislative and institutional
+          developments.</p>
+        <a class="linktext benefit-link" href="https://www.claglobal.com/what-we-do/tax/">More Information</a>
+      </div>
+      <div class="benefit">
+        <span class="benefit-rule b-olive" aria-hidden="true"></span>
+        <h3 class="h5">Advisory</h3>
+        <p class="body-copy">With extensive international reach, we can assemble a consulting team
+          that understands the ins and outs of your sector and knows the latest industry standards.</p>
+        <a class="linktext benefit-link" href="https://www.claglobal.com/what-we-do/advisory/">More Information</a>
+      </div>
+      <div class="benefit">
+        <span class="benefit-rule b-mustard" aria-hidden="true"></span>
+        <h3 class="h5">Outsourcing</h3>
+        <p class="body-copy">Enhance your productivity and gain control over costs by outsourcing
+          specific business functions, reinvesting any funds saved into your business growth.</p>
+        <a class="linktext benefit-link" href="https://www.claglobal.com/what-we-do/outsourcing/">More Information</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     INSIGHTS — reuses site insights component
-     ========================================================== -->
-<section class="sect sect-light" id="insights">
+<!-- ================= LOCATIONS ================= -->
+<section class="sect sect-grey" id="network">
   <div class="wrap">
-    <div class="sect-head rv">
-      <p class="eyebrow">Insights</p>
-      <h2 class="h2">What our member firms are working on</h2>
-      <p class="lede">Explore our insights and case studies to see how CLA Global member firms help
-        businesses navigate financial challenges and achieve their strategic goals.</p>
+    <div class="sect-head">
+      <h2 class="h2">Locations</h2>
     </div>
-    <div class="ins-grid rv">
-      <a class="ins" href="https://www.claglobal.com/insights/succession-planning-ownership-focused-continuity-and-legacy-preservation/">
-        <div class="ins-img"><img src="https://www.claglobal.com/media/fajbawjo/implementation-of-pillar-two-global-tax-system-accelerates-website.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="ins-body">
-          <span class="ins-date">13 July 2026</span>
-          <h3>Succession planning: ownership-focused continuity and legacy preservation</h3>
-          <span class="go">Read the insight
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
-        </div>
-      </a>
+
+    <div class="promo">
+      <div class="promo-body">
+        <h3 class="h3">Network Firms</h3>
+        <p class="body-copy">Our network members are highly collaborative with a commitment to build
+          and drive CLA Global's strategy. They adopt the CLA Global network name and brand identity,
+          which helps elevate network members through an aligned corporate brand and shared identity
+          across markets.</p>
+        <a class="btn btn-navy" href="https://www.claglobal.com/locations-network-firms/">Find a firm</a>
+      </div>
+      <div class="promo-media">
+        <img class="promo-img" src="https://www.claglobal.com/media/0ujhtosj/what-we-do.jpg" alt=""
+             loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <div class="promo promo-rev">
+      <div class="promo-media">
+        <img class="promo-img" src="https://www.claglobal.com/media/aqcnicy2/building-cyber-resilience-website-2.jpg"
+             alt="" loading="lazy" decoding="async">
+      </div>
+      <div class="promo-body">
+        <h3 class="h3">Alliance Firms</h3>
+        <p class="body-copy">An alliance membership offers global resources and reach in a flexible
+          model. Our alliance members experience the benefits of a CLA Global membership without the
+          requirements of a network membership.</p>
+        <a class="btn btn-navy" href="https://www.claglobal.com/locations-alliance-firms/">Find a firm</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSIGHTS ================= -->
+<section class="sect" id="insights">
+  <div class="wrap">
+    <div class="sect-head">
+      <h2 class="h2">Insights and Client Case Studies</h2>
+      <p class="desc">Explore our insights and case studies to see how CLA Global member firms help
+        businesses and individuals navigate financial challenges, organise operations, and achieve
+        their strategic goals.</p>
+    </div>
+    <div class="ins-grid">
       <a class="ins" href="https://www.claglobal.com/insights/building-cyber-resilience-a-robust-roadmap-for-the-future/">
-        <div class="ins-img"><img src="https://www.claglobal.com/media/aqcnicy2/building-cyber-resilience-website-2.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="ins-body">
-          <span class="ins-date">28 May 2026</span>
-          <h3>Building cyber resilience: a robust roadmap for the future</h3>
-          <span class="go">Read the insight
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
+        <div class="ins-panel">
+          <span class="ins-date">28 May, 2026</span>
+          <h3 class="ins-title">Building Cyber Resilience: A Robust Roadmap for the Future</h3>
         </div>
+        <img class="ins-img" src="https://www.claglobal.com/media/aqcnicy2/building-cyber-resilience-website-2.jpg"
+             alt="" loading="lazy" decoding="async">
       </a>
-      <a class="ins" href="https://www.claglobal.com/insights/new-uae-tax-legislation-aligns-closer-to-global-standards/">
-        <div class="ins-img"><img src="https://www.claglobal.com/media/rfnj3nhh/new-uae-tax-legislation-aligns-closer-to-global-standards-website.jpg" alt="" loading="lazy" decoding="async"></div>
-        <div class="ins-body">
-          <span class="ins-date">09 February 2026</span>
-          <h3>New UAE tax legislation aligns closer to global standards</h3>
-          <span class="go">Read the insight
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg></span>
+      <a class="ins" href="https://www.claglobal.com/insights/succession-planning-ownership-focused-continuity-and-legacy-preservation/">
+        <div class="ins-panel">
+          <span class="ins-date">13 July, 2026</span>
+          <h3 class="ins-title">Succession Planning: Ownership-Focused Continuity and Legacy Preservation</h3>
         </div>
+        <img class="ins-img" src="https://www.claglobal.com/media/fajbawjo/implementation-of-pillar-two-global-tax-system-accelerates-website.jpg"
+             alt="" loading="lazy" decoding="async">
+      </a>
+      <a class="ins" href="https://www.claglobal.com/insights/brazil-s-new-financial-cybersecurity-rules-align-to-global-standards/">
+        <div class="ins-panel">
+          <span class="ins-date">28 July, 2026</span>
+          <h3 class="ins-title">Brazil's New Financial Cybersecurity Rules Align to Global Standards</h3>
+        </div>
+        <img class="ins-img" src="https://www.claglobal.com/media/rfnj3nhh/new-uae-tax-legislation-aligns-closer-to-global-standards-website.jpg"
+             alt="" loading="lazy" decoding="async">
       </a>
     </div>
-    <div class="ins-foot rv">
-      <a class="btn btn-ghost-dark" href="https://www.claglobal.com/insights/">
-        All insights and articles
-        <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-          <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-      </a>
+    <div class="ins-foot">
+      <a class="btn btn-navy" href="https://www.claglobal.com/insights/">Insights and Articles</a>
     </div>
   </div>
 </section>
 
-<!-- ==========================================================
-     CONTACT + JOIN — short campaign form (Dal, comment c3)
-     ========================================================== -->
-<section class="sect conv" id="talk">
-  <svg class="conv-cp" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-    <polygon points="0,0 22,0 0,58" fill="#7DD2D3" opacity="0.42"/>
-    <polygon points="22,0 62,100 0,100 0,58" fill="#FFFFFF" opacity="0.04"/>
-    <line x1="22" y1="0" x2="62" y2="100" stroke="#7DD2D3" stroke-width="0.2" opacity="0.4"
-          vector-effect="non-scaling-stroke"/>
-    <line x1="0" y1="58" x2="100" y2="14" stroke="#7DD2D3" stroke-width="0.2" opacity="0.3"
-          vector-effect="non-scaling-stroke"/>
-  </svg>
-
+<!-- ================= CONTACT + JOIN ================= -->
+<section class="sect sect-rip" id="talk">
   <div class="wrap">
     <div class="conv-grid">
-      <div class="conv-left rv">
-        <p class="eyebrow">Become a member</p>
-        <h2 class="h2">Let's talk about your firm</h2>
-        <p>Join a professional services network designed to help realize the ambitions of privately
-           owned, fast-growing, mid-market clients with cross-border needs.</p>
+      <div class="conv-left">
+        <h2 class="h2">Become a Member of CLA Global</h2>
+        <p class="body-copy">Join our professional services network designed to help realize the
+          ambitions of privately owned, fast-growing, mid-market clients with cross-border needs.
+          It's an opportunity for you to increase collaboration, gain exposure to new skills and
+          capabilities, bring career opportunities and build new relationships.</p>
         <ul class="conv-list">
           <li>
-            <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
               <path d="M4 10.5l4 4 8-9"/></svg>
             A short, no-obligation conversation with the CLA Global membership team
           </li>
           <li>
-            <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
               <path d="M4 10.5l4 4 8-9"/></svg>
             An honest view on whether network or alliance membership fits your firm
           </li>
           <li>
-            <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
               <path d="M4 10.5l4 4 8-9"/></svg>
             We normally come back to you within two working days
           </li>
         </ul>
-        <div class="conv-alt">
-          <p>Prefer the full application form?</p>
-          <a class="btn btn-ghost-light" href="https://www.claglobal.com/who-we-are/join/">
-            Join CLA Global
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-          </a>
-        </div>
+        <a class="btn btn-outline-navy" href="https://www.claglobal.com/who-we-are/join/">Join CLA Global</a>
       </div>
 
-      <div class="form-card rv on-light">
-        <h3>Enquire about membership</h3>
+      <div class="form-card">
+        <h3 class="h3">Enquire about membership</h3>
         <p class="form-sub">Six fields. That's it.</p>
-
         <form id="campaign-form" novalidate>
           <div class="f-row">
             <div class="f">
-              <label for="fn">First name <span class="req" aria-hidden="true">*</span></label>
+              <label for="fn">First name</label>
               <input id="fn" name="fn" type="text" autocomplete="given-name" required>
             </div>
             <div class="f">
-              <label for="ln">Last name <span class="req" aria-hidden="true">*</span></label>
+              <label for="ln">Last name</label>
               <input id="ln" name="ln" type="text" autocomplete="family-name" required>
             </div>
           </div>
           <div class="f">
-            <label for="em">Work email <span class="req" aria-hidden="true">*</span></label>
+            <label for="em">Work email</label>
             <input id="em" name="em" type="email" autocomplete="email" required>
           </div>
           <div class="f-row">
             <div class="f">
-              <label for="fm">Firm name <span class="req" aria-hidden="true">*</span></label>
+              <label for="fm">Firm name</label>
               <input id="fm" name="fm" type="text" autocomplete="organization" required>
             </div>
             <div class="f">
-              <label for="cy">Country <span class="req" aria-hidden="true">*</span></label>
+              <label for="cy">Country</label>
               <select id="cy" name="cy" required>
                 <option value="">Select a country</option>
                 <option>United Kingdom</option>
@@ -1216,11 +787,7 @@ textarea:focus-visible,[tabindex]:focus-visible{
             <label for="cs">I agree that CLA Global may contact me about membership. See our
               <a href="https://www.claglobal.com/cla-global-limited-privacy-policy/">privacy policy</a>.</label>
           </div>
-          <button class="btn btn-navy" type="submit">
-            Send my enquiry
-            <svg class="arw" width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
-              <path d="M10 1l5 5-5 5M15 6H0" stroke="currentColor" stroke-width="2"/></svg>
-          </button>
+          <button class="btn btn-navy" type="submit">Send my enquiry</button>
           <p class="form-foot">Placeholder markup — production form to be embedded from HubSpot.</p>
         </form>
       </div>
@@ -1230,67 +797,57 @@ textarea:focus-visible,[tabindex]:focus-visible{
 
 </main>
 
-<!-- ==========================================================
-     FOOTER — reuses site footer
-     ========================================================== -->
-<footer class="ftr">
+<!-- ================= FOOTER ================= -->
+<footer class="ftr on-navy">
   <div class="wrap">
     <div class="ftr-top">
       <div>
         <div class="ftr-logo">
-          <img src="https://www.claglobal.com/images/footer-logo.svg" alt="CLA Global"
-               onerror="this.style.display='none'">
+          <span class="logo logo-white logo-ftr" role="img" aria-label="CLA Global"></span>
         </div>
-        <h4>Connect</h4>
-        <div class="ftr-social">
-          <a href="https://www.linkedin.com/company/claglobal/about/" aria-label="CLA Global on LinkedIn">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.33-.03-3.05-1.9-3.05-1.9 0-2.2 1.45-2.2 2.95V21h-4z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@CLAGlobalLimited" aria-label="CLA Global on YouTube">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M23 12s0-3.6-.46-5.32a2.9 2.9 0 00-2.04-2.06C18.75 4.1 12 4.1 12 4.1s-6.75 0-8.5.52A2.9 2.9 0 001.46 6.68C1 8.4 1 12 1 12s0 3.6.46 5.32a2.9 2.9 0 002.04 2.06c1.75.52 8.5.52 8.5.52s6.75 0 8.5-.52a2.9 2.9 0 002.04-2.06C23 15.6 23 12 23 12zM9.8 15.4V8.6l5.9 3.4z"/></svg>
-          </a>
-          <a href="https://twitter.com/CLAGlobal_LTD" aria-label="CLA Global on X">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9.1L1 2h7l4.8 6.4zm-1.2 18h1.9L7.1 4H5.1z"/></svg>
-          </a>
-        </div>
+        <p class="ftr-legal">CLA Global Brand Limited is a company limited by guarantee incorporated
+          in England and Wales (registered number 14032779) with its registered office at Floor 3,
+          8 Bishopsgate, London, United Kingdom, EC2N 4BQ. All rights reserved.</p>
       </div>
       <div>
         <h4>Legal</h4>
         <ul>
-          <li><a href="https://www.claglobal.com/legal-disclaimer/">Legal disclaimer</a></li>
-          <li><a href="https://www.claglobal.com/terms-of-use-and-disclaimers/">Terms of use and disclaimers</a></li>
-          <li><a href="https://www.claglobal.com/email-disclaimer/">Email disclaimer</a></li>
+          <li><a href="https://www.claglobal.com/legal-disclaimer/">Legal Disclaimer</a></li>
+          <li><a href="https://www.claglobal.com/terms-of-use-and-disclaimers/">Terms of Use and Disclaimers</a></li>
+          <li><a href="https://www.claglobal.com/email-disclaimer/">Email Disclaimer</a></li>
         </ul>
       </div>
       <div>
         <h4>Privacy</h4>
         <ul>
-          <li><a href="https://www.claglobal.com/cla-global-limited-privacy-policy/">Privacy policy</a></li>
+          <li><a href="https://www.claglobal.com/cla-global-limited-privacy-policy/">CLA Global Limited – Privacy Policy</a></li>
           <li><a href="https://www.claglobal.com/cookie-policy/">Cookie policy</a></li>
           <li><a href="https://www.claglobal.com/membershubintranet/">CLA Global Members Hub</a></li>
         </ul>
       </div>
       <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="https://www.claglobal.com/who-we-are/">Who we are</a></li>
-          <li><a href="https://www.claglobal.com/what-we-do/">What we do</a></li>
-          <li><a href="https://www.claglobal.com/locations/">Locations</a></li>
-          <li><a href="https://www.claglobal.com/contact-us/">Contact us</a></li>
-        </ul>
+        <h4>Connect</h4>
+        <div class="ftr-social">
+          <a href="https://www.linkedin.com/company/claglobal/about/" aria-label="CLA Global on LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95 4.03 0 4.78 2.5 4.78 5.76V21h-4v-5.6c0-1.33-.03-3.05-1.9-3.05-1.9 0-2.2 1.45-2.2 2.95V21h-4z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@CLAGlobalLimited" aria-label="CLA Global on YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23 12s0-3.6-.46-5.32a2.9 2.9 0 00-2.04-2.06C18.75 4.1 12 4.1 12 4.1s-6.75 0-8.5.52A2.9 2.9 0 001.46 6.68C1 8.4 1 12 1 12s0 3.6.46 5.32a2.9 2.9 0 002.04 2.06c1.75.52 8.5.52 8.5.52s6.75 0 8.5-.52a2.9 2.9 0 002.04-2.06C23 15.6 23 12 23 12zM9.8 15.4V8.6l5.9 3.4z"/></svg>
+          </a>
+          <a href="https://twitter.com/CLAGlobal_LTD" aria-label="CLA Global on X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9.1L1 2h7l4.8 6.4zm-1.2 18h1.9L7.1 4H5.1z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <p class="ftr-legal">
-      CLA Global Brand Limited is a company limited by guarantee incorporated in England and Wales
-      (registered number 14032779) with its registered office at Floor 3, 8 Bishopsgate, London,
-      United Kingdom, EC2N 4BQ. All rights reserved. CLA Global is not a professional services
-      organization and does not provide any services to clients. Services are provided by the network
-      and alliance members of CLA Global, each of which is a separate and independent legal entity.
-      For more detail about CLA Global's structure, please see
-      <a href="https://www.claglobal.com/disclaimer/">CLAglobal.com/disclaimer</a>.
+    <p class="ftr-disclaimer">
+      CLA Global is not a professional services organization and does not provide any services to
+      clients. Services are provided by the network and alliance members of CLA Global, each of which
+      is a separate and independent legal entity. For more detail about CLA Global's structure,
+      please see <a href="https://www.claglobal.com/disclaimer/">CLAglobal.com/disclaimer</a>.
       <br><br>©2026. CLA Global Brand Limited.
     </p>
   </div>
@@ -1301,252 +858,167 @@ textarea:focus-visible,[tabindex]:focus-visible{
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- Sticky header ---------- */
-  var hdr = document.getElementById("hdr");
-  function onScroll(){ hdr.classList.toggle("is-stuck", window.scrollY > 40); }
-  onScroll();
-  window.addEventListener("scroll", onScroll, {passive:true});
-
   /* ---------- Mobile nav ---------- */
-  var burger = document.getElementById("burger"), mob = document.getElementById("mobnav");
+  var burger=document.getElementById("burger"), mob=document.getElementById("mobnav");
   burger.addEventListener("click", function(){
-    var open = burger.getAttribute("aria-expanded") === "true";
+    var open = burger.getAttribute("aria-expanded")==="true";
     burger.setAttribute("aria-expanded", String(!open));
     mob.classList.toggle("is-open", !open);
     burger.setAttribute("aria-label", open ? "Open menu" : "Close menu");
   });
   mob.addEventListener("click", function(e){
-    if(e.target.tagName === "A"){
-      burger.setAttribute("aria-expanded","false");
-      mob.classList.remove("is-open");
-    }
+    if(e.target.tagName==="A"){ burger.setAttribute("aria-expanded","false"); mob.classList.remove("is-open"); }
   });
 
-  /* ==========================================================
-     VIDEO CAROUSEL — bespoke component
-     ========================================================== */
-  var FILMS = [
-    { id:"ZBJ1Kh7as3U", cat:"Membership", dur:"2:14",
-      title:"Why join CLA Global?",
+  /* ================= VIDEO CAROUSEL ================= */
+  var FILMS=[
+    { id:"ZBJ1Kh7as3U", topic:"Membership", dur:"2:14",
+      title:"Why Join CLA Global?",
       desc:"Ours is a culture of diversity and inclusion that uses our combined strengths as our greatest competitive advantage. Member firm professionals serve as their clients' eyes and ears from a business, regulatory and tax perspective.",
       link:"https://www.claglobal.com/who-we-are/why-cla-global/", linkText:"Why CLA Global?" },
-    { id:"vFtnMHnM4jo", cat:"Technology & innovation", dur:"3:02",
+    { id:"vFtnMHnM4jo", topic:"Technology & Innovation", dur:"3:02",
       title:"Inside the Technology and Innovation Exchange",
-      desc:"CLA Global events give member firms of all sizes the chance to be inspired and learn from each other. Highlights from our first Technology and Innovation Exchange, held in New York.",
+      desc:"CLA Global events give member firms of all sizes the chance to be inspired and learn from each other. Highlights from our first Technology and Innovation Exchange event, held in New York.",
       link:"https://www.claglobal.com/who-we-are/why-cla-global/", linkText:"How our firms collaborate" },
-    { id:"66NYfJG09HU", cat:"People & culture", dur:"2:38",
-      title:"The Global Mobility Program",
-      desc:"We work with member firms to deliver professional development opportunities that help their people grow their careers — from training and mentorship to mobility placements abroad. Hear from secondees on what it changed for them.",
+    { id:"66NYfJG09HU", topic:"People & Culture", dur:"2:38",
+      title:"Our Global Mobility Program",
+      desc:"We work with our member firms to deliver professional development opportunities that help their people grow their careers, from training and mentorship to mobility abroad placements.",
       link:"https://www.claglobal.com/who-we-are/why-cla-global/", linkText:"People and culture" },
-    { id:null, cat:"A platform for growth", dur:"1:52",
-      title:"Built for firms that want to move faster",
-      desc:"Our flexible network supports scalability while offering members the chance to shape our future. Member firms explain what having a platform behind them changed about how they grow.",
+    { id:null, topic:"A Platform for Growth", dur:"1:52",
+      title:"Built for Firms That Want to Move Faster",
+      desc:"Our flexible network supports scalability while offering members the chance to shape our future. Member firms explain what having a platform behind them changed about the way they grow.",
       link:"https://www.claglobal.com/who-we-are/why-cla-global/", linkText:"A platform for growth" },
-    { id:null, cat:"Clients & markets", dur:"2:05",
-      title:"Crossing borders with confidence",
-      desc:"Member firms collaborate to explore client opportunities, develop accelerated growth plans, and increase cross-border revenue — speaking their clients' language in every market.",
+    { id:null, topic:"Clients & Markets", dur:"2:05",
+      title:"Crossing Borders With Confidence",
+      desc:"Member firms collaborate to explore client opportunities, develop accelerated growth plans, and increase cross-border revenue, speaking their clients' language in every market.",
       link:"https://www.claglobal.com/what-we-do/", linkText:"What we do" },
-    { id:null, cat:"Stand-out brand", dur:"1:44",
-      title:"A global brand with real momentum",
+    { id:null, topic:"Stand-out Brand", dur:"1:44",
+      title:"A Global Brand With Real Momentum",
       desc:"Named the 15th largest global accounting network within two years of founding. Member firms describe what the CLA Global brand has done for their standing in their own market.",
       link:"https://www.claglobal.com/who-we-are/our-brand-and-values/", linkText:"Our brand and values" }
   ];
 
-  /* Branded fallback poster for films without artwork yet */
-  function placeholder(i){
-    var tints = ["#39A5A7","#4F77CE","#24787A","#7DD2D3","#2E334E","#39A5A7"];
-    var svg =
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">' +
-      '<rect width="640" height="360" fill="#2E334E"/>' +
-      '<polygon points="380,0 640,0 640,120 470,150" fill="' + tints[i % tints.length] + '" opacity="0.85"/>' +
-      '<polygon points="470,150 560,360 180,360 0,290" fill="#1D2136" opacity="0.55"/>' +
-      '<line x1="0" y1="290" x2="640" y2="80" stroke="#7DD2D3" stroke-width="1.4" opacity="0.6"/>' +
-      '<line x1="380" y1="0" x2="560" y2="360" stroke="#7DD2D3" stroke-width="1.4" opacity="0.6"/>' +
+  function placeholder(){
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">'+
+      '<rect width="640" height="360" fill="#2E334E"/>'+
+      '<rect x="0" y="0" width="640" height="5" fill="#7DD2D3"/>'+
+      '<text x="320" y="190" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#FFFFFF">CLA Global</text>'+
       '</svg>';
-    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svg);
   }
+  function poster(f){ return f.id ? "https://img.youtube.com/vi/"+f.id+"/maxresdefault.jpg" : placeholder(); }
+  function pad(n){ return (n<10?"0":"")+n; }
 
-  function poster(f, i){
-    return f.id ? ("https://img.youtube.com/vi/" + f.id + "/maxresdefault.jpg") : placeholder(i);
-  }
+  var rail=document.getElementById("vc-rail"),
+      stage=document.getElementById("vc-stage"),
+      posterE=document.getElementById("vc-poster"),
+      labelE=document.getElementById("vc-stage-label"),
+      topicE=document.getElementById("vc-topic"),
+      titleE=document.getElementById("vc-title"),
+      descE=document.getElementById("vc-desc"),
+      linkE=document.getElementById("vc-link"),
+      linkT=document.getElementById("vc-linktext"),
+      countE=document.getElementById("vc-count"),
+      liveE=document.getElementById("vc-live"),
+      playE=document.getElementById("vc-play"),
+      playLbl=document.getElementById("vc-play-label"),
+      current=0;
 
-  var rail    = document.getElementById("vc-rail"),
-      stage   = document.getElementById("vc-stage"),
-      posterE = document.getElementById("vc-poster"),
-      chipE   = document.getElementById("vc-chip"),
-      durE    = document.getElementById("vc-dur"),
-      catE    = document.getElementById("vc-cat"),
-      titleE  = document.getElementById("vc-title"),
-      descE   = document.getElementById("vc-desc"),
-      linkE   = document.getElementById("vc-link"),
-      linkT   = document.getElementById("vc-linktext"),
-      nowE    = document.getElementById("vc-now"),
-      liveE   = document.getElementById("vc-live"),
-      playE   = document.getElementById("vc-play"),
-      playLbl = document.getElementById("vc-play-label"),
-      current = 0;
-
-  /* Build the thumbnail rail */
-  FILMS.forEach(function(f, i){
-    var b = document.createElement("button");
-    b.className = "vc-thumb";
-    b.type = "button";
-    b.setAttribute("role", "tab");
-    b.setAttribute("aria-selected", i === 0 ? "true" : "false");
-    b.setAttribute("aria-label", "Film " + (i+1) + " of 6: " + f.title);
-    b.tabIndex = i === 0 ? 0 : -1;
-    b.innerHTML =
-      '<img src="' + poster(f, i) + '" alt="" onerror="this.src=\'' + placeholder(i) + '\'">' +
-      '<span class="vc-thumb-mark"></span>' +
-      '<span class="vc-thumb-t">' + f.title + '</span>' +
-      '<span class="vc-thumb-n">' + String(i+1).padStart(2,"0") + '</span>';
+  FILMS.forEach(function(f,i){
+    var b=document.createElement("button");
+    b.className="vc-thumb"; b.type="button";
+    b.setAttribute("role","tab");
+    b.setAttribute("aria-selected", i===0?"true":"false");
+    b.setAttribute("aria-label","Film "+(i+1)+" of 6: "+f.title);
+    b.tabIndex = i===0?0:-1;
+    b.innerHTML='<span class="vc-thumb-rule"></span>'+
+      '<span class="vc-thumb-img"><img src="'+poster(f)+'" alt="" onerror="this.src=\''+placeholder()+'\'">'+
+      '<span class="vc-thumb-n">'+pad(i+1)+'</span></span>'+
+      '<span class="vc-thumb-t">'+f.title+'</span>';
     b.addEventListener("click", function(){ select(i); });
     rail.appendChild(b);
   });
-
-  var thumbs = Array.prototype.slice.call(rail.querySelectorAll(".vc-thumb"));
+  var thumbs=Array.prototype.slice.call(rail.querySelectorAll(".vc-thumb"));
 
   function resetStage(){
-    var f = stage.querySelector("iframe");
-    if(f) f.remove();
-    posterE.style.display = "";
-    playE.style.display = "";
-    stage.querySelector(".vc-stage-label").style.display = "";
+    var f=stage.querySelector("iframe"); if(f) f.remove();
+    posterE.style.display=""; playE.style.display=""; labelE.style.display="";
   }
 
   function select(i, focusThumb){
-    current = i;
-    var f = FILMS[i];
+    current=i; var f=FILMS[i];
     resetStage();
-
-    posterE.src = poster(f, i);
-    posterE.alt = "";
-    posterE.onerror = function(){ posterE.src = placeholder(i); posterE.onerror = null; };
-
-    chipE.textContent  = "Film " + String(i+1).padStart(2,"0");
-    durE.textContent   = f.dur;
-    catE.textContent   = f.cat;
-    titleE.textContent = f.title;
-    descE.textContent  = f.desc;
-    linkE.href         = f.link;
-    linkT.textContent  = f.linkText;
-    nowE.textContent   = String(i+1).padStart(2,"0");
-    playLbl.textContent = "Play: " + f.title;
-    liveE.textContent  = "Now showing film " + (i+1) + " of 6: " + f.title;
-
-    thumbs.forEach(function(t, n){
-      var on = n === i;
-      t.setAttribute("aria-selected", on ? "true" : "false");
-      t.tabIndex = on ? 0 : -1;
+    posterE.src=poster(f);
+    posterE.onerror=function(){ posterE.src=placeholder(); posterE.onerror=null; };
+    labelE.textContent="Film "+pad(i+1)+"  ·  "+f.dur;
+    topicE.textContent=f.topic;
+    titleE.textContent=f.title;
+    descE.textContent=f.desc;
+    linkE.href=f.link;
+    linkT.textContent=f.linkText;
+    countE.textContent="Film "+pad(i+1)+" of "+pad(FILMS.length);
+    playLbl.textContent="Play: "+f.title;
+    liveE.textContent="Now showing film "+(i+1)+" of 6: "+f.title;
+    thumbs.forEach(function(t,n){
+      var on=n===i;
+      t.setAttribute("aria-selected", on?"true":"false");
+      t.tabIndex = on?0:-1;
     });
-
     if(focusThumb) thumbs[i].focus();
-    if(window.innerWidth < 680){
-      thumbs[i].scrollIntoView({block:"nearest", inline:"center", behavior: reduce ? "auto" : "smooth"});
+    if(window.innerWidth<680){
+      thumbs[i].scrollIntoView({block:"nearest",inline:"center",behavior:reduce?"auto":"smooth"});
     }
   }
 
-  /* Play — swap the poster for the real embed (facade pattern) */
   playE.addEventListener("click", function(){
-    var f = FILMS[current];
-    if(!f.id){
-      liveE.textContent = "This campaign film has not been supplied yet.";
-      stage.classList.add("is-empty");
-      chipE.textContent = "Awaiting asset";
-      return;
-    }
-    var fr = document.createElement("iframe");
-    fr.src = "https://www.youtube.com/embed/" + f.id + "?rel=0&autoplay=1";
-    fr.title = f.title;
-    fr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
-    fr.allowFullscreen = true;
+    var f=FILMS[current];
+    if(!f.id){ liveE.textContent="This campaign film has not been supplied yet.";
+      labelE.textContent="Awaiting asset"; return; }
+    var fr=document.createElement("iframe");
+    fr.src="https://www.youtube.com/embed/"+f.id+"?rel=0&autoplay=1";
+    fr.title=f.title;
+    fr.allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
+    fr.allowFullscreen=true;
     stage.appendChild(fr);
-    posterE.style.display = "none";
-    playE.style.display = "none";
-    stage.querySelector(".vc-stage-label").style.display = "none";
+    posterE.style.display="none"; playE.style.display="none"; labelE.style.display="none";
   });
 
   document.getElementById("vc-prev").addEventListener("click", function(){
-    select((current - 1 + FILMS.length) % FILMS.length);
+    select((current-1+FILMS.length)%FILMS.length);
   });
   document.getElementById("vc-next").addEventListener("click", function(){
-    select((current + 1) % FILMS.length);
+    select((current+1)%FILMS.length);
   });
-
-  /* Roving-tabindex keyboard support on the rail */
   rail.addEventListener("keydown", function(e){
-    var i = null;
-    if(e.key === "ArrowRight") i = (current + 1) % FILMS.length;
-    else if(e.key === "ArrowLeft") i = (current - 1 + FILMS.length) % FILMS.length;
-    else if(e.key === "Home") i = 0;
-    else if(e.key === "End") i = FILMS.length - 1;
-    if(i !== null){ e.preventDefault(); select(i, true); }
+    var i=null;
+    if(e.key==="ArrowRight") i=(current+1)%FILMS.length;
+    else if(e.key==="ArrowLeft") i=(current-1+FILMS.length)%FILMS.length;
+    else if(e.key==="Home") i=0;
+    else if(e.key==="End") i=FILMS.length-1;
+    if(i!==null){ e.preventDefault(); select(i,true); }
   });
-
   select(0);
 
   /* ---------- Anthem video facade ---------- */
-  var aFrame = document.getElementById("anthem-frame"),
-      aPlay  = document.getElementById("anthem-play");
+  var aFrame=document.getElementById("anthem-frame"), aPlay=document.getElementById("anthem-play");
   aPlay.addEventListener("click", function(){
-    var fr = document.createElement("iframe");
-    fr.src = "https://www.youtube.com/embed/ZBJ1Kh7as3U?rel=0&autoplay=1";
-    fr.title = "CLA Global brand anthem";
-    fr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
-    fr.allowFullscreen = true;
+    var fr=document.createElement("iframe");
+    fr.src="https://www.youtube.com/embed/ZBJ1Kh7as3U?rel=0&autoplay=1";
+    fr.title="CLA Global brand anthem";
+    fr.allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture";
+    fr.allowFullscreen=true;
     aFrame.appendChild(fr);
-    aPlay.style.display = "none";
-    aFrame.querySelector(".anthem-cap").style.display = "none";
+    aPlay.style.display="none";
   });
-
-  /* ---------- Scroll reveal ---------- */
-  var revealables = document.querySelectorAll(".rv");
-  if(reduce || !("IntersectionObserver" in window)){
-    revealables.forEach(function(el){ el.classList.add("in"); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
-    revealables.forEach(function(el){ io.observe(el); });
-  }
-
-  /* ---------- Stat counters ---------- */
-  var stats = document.querySelectorAll(".stat b[data-count]");
-  function runCount(el){
-    var target = parseFloat(el.dataset.count),
-        prefix = el.dataset.prefix || "",
-        suffix = el.dataset.suffix || "",
-        start = null, dur = 1400;
-    function step(ts){
-      if(start === null) start = ts;
-      var p = Math.min((ts - start) / dur, 1),
-          eased = 1 - Math.pow(1 - p, 3),
-          val = Math.round(target * eased);
-      el.textContent = prefix + val.toLocaleString("en-GB") + suffix;
-      if(p < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if(!reduce && "IntersectionObserver" in window){
-    var sio = new IntersectionObserver(function(entries){
-      entries.forEach(function(en){
-        if(en.isIntersecting){ runCount(en.target); sio.unobserve(en.target); }
-      });
-    }, {threshold:0.5});
-    stats.forEach(function(el){ sio.observe(el); });
-  }
 
   /* ---------- Form (POC only) ---------- */
   document.getElementById("campaign-form").addEventListener("submit", function(e){
     e.preventDefault();
-    var card = e.target.closest(".form-card");
-    card.innerHTML =
-      '<h3>Thanks — your enquiry is on its way</h3>' +
-      '<p class="form-sub" style="margin-bottom:0">Someone from the CLA Global membership team will ' +
+    var card=e.target.closest(".form-card");
+    card.innerHTML='<h3 class="h3">Thanks — your enquiry is on its way</h3>'+
+      '<p class="form-sub" style="margin-bottom:0">Someone from the CLA Global membership team will '+
       'come back to you within two working days.</p>';
-    card.scrollIntoView({block:"center", behavior: reduce ? "auto" : "smooth"});
+    card.scrollIntoView({block:"center",behavior:reduce?"auto":"smooth"});
   });
 })();
 </script>
