@@ -365,17 +365,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
 .ftr a{color:var(--white);font-size:18px;font-weight:300;text-decoration:none}
 .ftr a:hover{text-decoration:underline}
-.ftr-legal{font-size:18px;font-weight:300;line-height:1.6}
+.ftr-legal{font-size:18px;font-weight:300;line-height:1.6;margin:0 0 20px}
+.ftr-legal:last-child{margin-bottom:0}
+.ftr-legal a{color:inherit;text-decoration:underline}
 .ftr-social{display:flex;gap:12px}
 .ftr-social a{width:42px;height:42px;display:flex;align-items:center;justify-content:center;
   background:var(--white);border-radius:50%;color:var(--navy);
   transition:background-color .18s ease,color .18s ease}
 .ftr-social a:hover{background:var(--riptide);color:var(--navy)}
 @media (prefers-reduced-motion:reduce){.ftr-social a{transition:none}}
-.ftr-disclaimer{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.2);
-  font-size:16px;font-weight:300;line-height:1.6;color:var(--disclaimer)}
-.ftr-disclaimer a{font-size:16px;color:var(--disclaimer);text-decoration:underline}
-.ftr-copy{margin:22px 0 0;font-size:16px;font-weight:300;color:var(--disclaimer)}
 @media (max-width:900px){.ftr-top{grid-template-columns:1fr 1fr;gap:32px}}
 @media (max-width:560px){.ftr-top{grid-template-columns:1fr}}
 </style>
@@ -776,6 +774,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
           (&ldquo;CLA Global&rdquo;), a company limited by guarantee incorporated in England and
           Wales (registration number 14032746) and refers to a global network and alliance of
           independent member firms.</p>
+        <p class="ftr-legal">CLA Global is not a professional services organization and does not
+          provide any services to clients. Services are provided by the network and alliance members
+          of CLA Global, each of which is a separate and independent legal entity. For more detail
+          about CLA Global's structure, please see
+          <a href="https://www.claglobal.com/disclaimer/">CLAglobal.com/disclaimer</a>.</p>
+        <p class="ftr-legal">&copy;2026. CLA Global Brand Limited.</p>
       </div>
       <div>
         <h4>Legal</h4>
@@ -808,13 +812,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
         </div>
       </div>
     </div>
-    <p class="ftr-disclaimer">
-      CLA Global is not a professional services organization and does not provide any services to
-      clients. Services are provided by the network and alliance members of CLA Global, each of which
-      is a separate and independent legal entity. For more detail about CLA Global's structure,
-      please see <a href="https://www.claglobal.com/disclaimer/">CLAglobal.com/disclaimer</a>.
-    </p>
-    <p class="ftr-copy">&copy;2026. CLA Global Brand Limited.</p>
   </div>
 </footer>
 
